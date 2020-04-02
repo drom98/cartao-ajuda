@@ -15,7 +15,13 @@ class CreateLojasTable extends Migration
     {
         Schema::create('lojas', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
+            $table->string('nome', 50);
+            $table->string('logo');
+            $table->text('texto_pos_compra');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

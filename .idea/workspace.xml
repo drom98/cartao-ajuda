@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c87d085f-14c4-4a60-a2b9-9cde3bb73778" name="Default Changelist" comment="" />
+    <list default="true" id="c87d085f-14c4-4a60-a2b9-9cde3bb73778" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_04_02_000334_create_metodos_pagamento_loja.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_01_235111_create_lojas_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_01_235111_create_lojas_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_01_235131_create_cartaos_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_01_235131_create_cartoes_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_01_235209_create_metodo__pagamentos_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_01_235209_create_metodos__pagamento_table.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +19,9 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -114,13 +124,18 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1ZxBwzfgZw79khjTNXROxw1O4gS" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="Laravel.SettingsForm" />
@@ -141,17 +156,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1585771107046</updated>
-      <workItem from="1585771109404" duration="1340000" />
+      <workItem from="1585771109404" duration="2694000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="340" y="102" key="SettingsEditor" timestamp="1585771237089">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="340" y="102" key="SettingsEditor/0.30.1920.1050@0.30.1920.1050" timestamp="1585771237089" />
+    <state x="539" y="45" width="840" height="1034" key="search.everywhere.popup" timestamp="1585785991197">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state x="539" y="45" width="840" height="1034" key="search.everywhere.popup/0.30.1920.1050@0.30.1920.1050" timestamp="1585785991197" />
   </component>
 </project>

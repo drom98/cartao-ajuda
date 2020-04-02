@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMetodoPagamentosTable extends Migration
+class CreateMetodosPagamentoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class CreateMetodoPagamentosTable extends Migration
      */
     public function up()
     {
-        Schema::create('metodo__pagamentos', function (Blueprint $table) {
+        Schema::create('metodos_pagamento', function (Blueprint $table) {
             $table->id();
+            $table->string('nome');
+            $table->string('descricao');
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ class CreateMetodoPagamentosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('metodo__pagamentos');
+        Schema::dropIfExists('metodos__pagamento');
     }
 }
