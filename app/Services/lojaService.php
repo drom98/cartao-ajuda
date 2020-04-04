@@ -12,7 +12,10 @@ class lojaService
     public function make(Request $request)
     {
         $loja = Loja::create([
-            
+            'user_id' => Auth()::id(),
+            'nome' => $request->nome,
+            'logo' => $request->logo,
+            'texto_pos_compra' => $request->logo,
         ]);
     }
 }
