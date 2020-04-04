@@ -10,10 +10,16 @@ class Loja extends Model
 
     protected $fillable = [
         'user_id',
+        'loja_id',
         'nome',
         'logo',
-        'texto_pos_compra',
+        'texto_agradecimento',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo('App\User', 'user_id');
+    }
 
     public function cartoes()
     {
