@@ -18,15 +18,14 @@
     <script src="https://kit.fontawesome.com/92f1af5f84.js" crossorigin="anonymous"></script>
 
 </head>
-<body class="has-navbar-fixed-top has-background-">
-    @include('includes.navbar')
-    <section class="section">
-        @yield('content')
-    </section>
+<body class="has-background-light">
+
+    @yield('content')
 
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/jquery-3.4.1.min.js.js') }}"></script>
-    <script src="{{ asset('js/app.js') }}" defer></script>
+
+<!-- Scripts -->
+<script src="{{ asset('js/jquery-3.4.1.min.js.js') }}"></script>
+<script src="{{ asset('js/app.js') }}" defer></script>
 </body>
 </html>

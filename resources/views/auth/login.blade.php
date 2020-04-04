@@ -1,73 +1,49 @@
-@extends('layouts.app')
+@extends('auth.layouts.layout')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+    <section class="hero is-fullheight">
+        <div class="hero-body" id="login-container">
+            <div class="container">
+                <div class="columns is-centered">
+                    <div class="column is-4">
+                        <div class="card">
+                            <div class="card-content">
+                                <h2 class="subtitle is-6 has-text-centered">Bem vindo de volta!👋️</h2>
+                                <h1 class="title has-text-link is-4 has-text-centered">Iniciar sessão</h1>
+                                <form method="POST" action="{{ route('login') }}">
+                                    @csrf
+                                    <div class="field">
+                                        <label class="label">Email:</label>
+                                        <div class="control has-icons-left">
+                                            <input name="email" type="email" class="input @error('email') is-invalid @enderror" placeholder="Insira o seu email..." value="{{ old('email') }}" autofocus required>
+                                            <span class="icon is-small is-left">
+                                                <i class="fas fa-envelope"></i>
+                                            </span>
+                                        </div>
+                                        <p id="nome" class="help is-danger is-hidden">O nome que introduziu não existe.</p>
+                                    </div>
+                                    <div class="field">
+                                        <label class="label">Password:</label>
+                                        <div class="control has-icons-left">
+                                            <input name="password" type="password" class="input" placeholder="Insira a sua password..." required>
+                                            <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                          </span>
+                                        </div>
+                                        <p id="password" class="help is-danger is-hidden">Password errada.</p>
+                                    </div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                    <div class="field">
+                                        <div class="control">
+                                            <input type="submit" class="button is-link is-fullwidth" value="Entrar">
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </section>
 @endsection
