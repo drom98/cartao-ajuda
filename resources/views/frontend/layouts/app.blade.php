@@ -19,14 +19,16 @@
 
 </head>
 <body class="has-navbar-fixed-top has-background-">
-    @include('includes.navbar')
+    @include('frontend.includes.navbar')
     <section class="section">
         @yield('content')
     </section>
 
 
     <!-- Scripts -->
-    <script src="{{ asset('js/jquery-3.4.1.min.js.js') }}"></script>
+    <script src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
+
+    @stack('scriptAdicionarMetodoPagamento')
 </body>
 </html>

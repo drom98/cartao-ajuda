@@ -1,20 +1,20 @@
-@extends('layouts.app')
+@extends('frontend.layouts.app')
 
 @section('content')
     <div class="container">
-
+        @include('frontend.includes.mensagem-erro')
         <div class="columns">
             <div class="column">
-                @include('includes.menu')
+                @include('frontend.includes.menu')
             </div>
         </div>
 
         <div class="columns">
             <div class="column is-three-quarters">
-                @include('includes.table')
+                @include('frontend.includes.table')
             </div>
             <div class="column">
-                @include('includes.status-card')
+                @include('frontend.includes.status-card')
             </div>
         </div>
     </div>
