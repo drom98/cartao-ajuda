@@ -3,10 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Loja;
+use App\Services\lojaService;
 use Illuminate\Http\Request;
 
 class LojaController extends Controller
 {
+
+    private $lojaService;
+
+    public function __construct(LojaService $lojaService)
+    {
+        $this->lojaService = $lojaService;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -35,7 +44,7 @@ class LojaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->lojaService->make($request);
     }
 
     /**

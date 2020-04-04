@@ -15,7 +15,9 @@ class lojaService
             'user_id' => Auth()::id(),
             'nome' => $request->nome,
             'logo' => $request->logo,
-            'texto_pos_compra' => $request->logo,
+            'texto_agradecimento' => $request->texto_agradecimento,
         ]);
+
+        return $loja;
     }
 }

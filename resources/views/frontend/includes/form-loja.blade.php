@@ -11,14 +11,14 @@
                 <div class="field">
                     <label class="label">Nome</label>
                     <div class="control">
-                        <input class="input" type="text" placeholder="Nome da loja">
+                        <input name="nome" class="input" type="text" placeholder="Nome da loja">
                     </div>
                 </div>
 
                 <div class="field">
                     <label class="label">Logotipo</label>
                     <div class="control">
-                        <input class="input" type="file">
+                        <input name="logo" class="input" type="file">
                     </div>
                 </div>
             </div>

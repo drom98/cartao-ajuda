@@ -3,6 +3,9 @@
 @section('content')
     <div class="container">
         @include('frontend.includes.mensagem-erro')
+        @isset($message)
+            @include('frontend.frontend.includes.mensagem-sucesso')
+        @endisset
         <div class="columns">
             <div class="column">
                 @include('frontend.includes.menu')
