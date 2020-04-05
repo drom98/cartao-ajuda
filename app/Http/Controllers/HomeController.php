@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Services\lojaService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -27,6 +28,10 @@ class HomeController extends Controller
      */
     public function index()
     {
+        if(!Auth::user()->loja_id) {
+            return view('frontend.home')->with('lojaNaoConfigurada', 'Ainda não configurou a sua loja.');
+        }
+
         return view('frontend.home');
     }
 

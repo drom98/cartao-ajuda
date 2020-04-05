@@ -2,7 +2,10 @@
 
 @section('content')
     <div class="container">
-        @include('frontend.includes.mensagem-erro')
+        @isset($lojaNaoConfigurada)
+            @include('frontend.includes.mensagem-warning')
+        @endisset
+
         @isset($message)
             @include('frontend.frontend.includes.mensagem-sucesso')
         @endisset
