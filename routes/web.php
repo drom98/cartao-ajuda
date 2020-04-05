@@ -23,5 +23,6 @@ Route::middleware('verified')->group( function () {
 
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/loja', 'HomeController@definicoesLoja')->name('home.loja');
+    Route::post('/loja', 'HomeController@adicionarLoja')->name('home.addLoja');
 });
 

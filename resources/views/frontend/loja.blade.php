@@ -11,7 +11,7 @@
 
         <div class="columns">
             <div class="column is-6">
-                @include('frontend.includes.form-loja')
+                @include('frontend.includes.form-loja-basic')
             </div>
         </div>
     </div>

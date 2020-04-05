@@ -1,4 +1,4 @@
-<form action="" method="post">
+<form action="{{ route('home.addLoja') }}" method="post">
     @csrf
     <div class="card">
         <header class="card-header">
@@ -39,9 +39,7 @@
                      </span>
                     <span>Adicionar</span>
                 </button>
-                <div id="inserirMetodos">
-
-                </div>
+                <div id="inserirMetodos"></div>
             </div>
         </div>
     </div>
@@ -57,7 +55,7 @@
                 <div class="field">
                     <label class="label">A sua mensagem</label>
                     <div class="control">
-                        <textarea class="textarea has-fixed-size" placeholder="Escreva a sua mensagem de agradecimento"></textarea>
+                        <textarea name="texto_agradecimento" class="textarea has-fixed-size" placeholder="Escreva a sua mensagem de agradecimento"></textarea>
                     </div>
                 </div>
             </div>
@@ -66,7 +64,7 @@
     <div class="column"></div>
     <div class="field is-grouped">
         <p class="control">
-            <button class="button is-success">
+            <button type="submit" class="button is-success">
                 Guardar
             </button>
         </p>

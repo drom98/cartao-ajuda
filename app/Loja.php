@@ -13,6 +13,7 @@ class Loja extends Model
         'loja_id',
         'nome',
         'logo',
+        'forma_pagamento',
         'texto_agradecimento',
     ];
 
