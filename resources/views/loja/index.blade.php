@@ -46,18 +46,42 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="field">
+                    <label class="label has-text-grey has-text-left">Nome:</label>
+                    <div class="control">
+                        <input name="nome" class="input" type="text" placeholder="Insira o seu primeiro nome">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label has-text-grey has-text-left">Apelido:</label>
+                    <div class="control">
+                        <input name="apelido" class="input" type="text" placeholder="Insira o seu apelido">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label has-text-grey has-text-left">Email:</label>
+                    <div class="control">
+                        <input name="email" class="input" type="email" placeholder="Insira o seu email">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-link is-fullwidth">Comprar cartão</button>
+                    </div>
+                </div>
+
+                <p class="has-text-grey is-size-7">Irá receber um email com as informações necessárias para efetuar o pagamento.</p>
+                <p class="has-text-grey is-size-7">O cartão é válido por 1 ano.</p>
             </form>
         </div>
-        <footer class="card-footer">
-            <p class="card-footer-item">
-      <span>
-        View on <a href="https://twitter.com/codinghorror/status/506010907021828096">Twitter</a>
-      </span>
+        <hr class="is-paddingless is-marginless">
+        <footer class="has-background-light">
+            <p class="has-text-weight-bold" style="display: inline-block;">
+                Página criada através da aplicação <a href="#"> Cartão Ajuda</a>.
             </p>
-            <p class="card-footer-item">
-      <span>
-        Share on <a href="#">Facebook</a>
-      </span>
+            <p class="has-text-grey is-size-7" style="display: inline-block;">
+                Comece a vender cartões para a sua loja, é totalmente grátis e simples!
             </p>
         </footer>
     </div>
