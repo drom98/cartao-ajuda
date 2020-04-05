@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Loja;
 use App\Services\lojaService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class LojaController extends Controller
 {
@@ -90,5 +91,12 @@ class LojaController extends Controller
     public function destroy(Loja $loja)
     {
         //
+    }
+
+    public function paginaLoja($nome)
+    {
+        $loja = Loja::where('nome', $nome)->first();
+
+        return view('loja.index')->with('loja', $loja);
     }
 }

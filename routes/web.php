@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/loja/{nome}', 'LojaController@paginaLoja');
+
 Auth::routes(['verify' => true]);
 
 Route::middleware('verified')->group( function () {
