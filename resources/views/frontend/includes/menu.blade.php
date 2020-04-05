@@ -13,7 +13,7 @@
             </a>
         </li>
         <li>
-            <a>
+            <a class="has-text-grey-light" style="cursor: default">
                 <span class="icon is-small"><i class="fas fa-paper-plane"></i></span>
                 <span>Emails</span>
             </a>

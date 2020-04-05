@@ -2,7 +2,8 @@
     <table class="table is-fullwidth has-shadow">
         <thead>
         <tr>
-            <th>Email cliente</th>
+            <th>Nome</th>
+            <th>Email</th>
             <th>Valor</th>
             <th>Comprado a</th>
             <th>Validade</th>
@@ -11,6 +12,7 @@
         </thead>
         <tbody>
         <tr>
+            <td>Diogo Oliveira</td>
             <td>diogoomarques98@gmail.com</td>
             <td>20€</td>
             <td>3/04/2020</td>
@@ -20,12 +22,13 @@
             </td>
         </tr>
         <tr>
+            <td>Diogo Oliveira</td>
             <td>diogoomarques98@gmail.com</td>
             <td>20€</td>
             <td>3/04/2020</td>
             <td>3/04/2021</td>
             <td>
-                <button class="button is-success is-light is-small is-rounded">Ativado</button>
+                <p class="button is-success is-light is-small is-rounded" style="cursor: default;">Ativado</p>
             </td>
         </tr>
         </tbody>
