@@ -14,6 +14,7 @@ class Loja extends Model
         'nome',
         'logo',
         'forma_pagamento',
+        'texto_compra',
         'texto_agradecimento',
     ];
 

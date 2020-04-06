@@ -9,7 +9,7 @@
             </div>
         </div>
 
-        <div class="columns">
+        <div class="columns is-centered">
             <div class="column is-6">
                 @include('frontend.includes.form-loja-basic')
             </div>

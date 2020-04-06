@@ -75,8 +75,10 @@
                 <p class="has-text-grey is-size-7">O cartão é válido por 1 ano.</p>
             </form>
         </div>
+        <div class="column"></div>
         <hr class="is-paddingless is-marginless">
         <footer class="has-background-light">
+            <div class="column"></div>
             <p class="has-text-weight-bold" style="display: inline-block;">
                 Página criada através da aplicação <a href="#"> Cartão Ajuda</a>.
             </p>

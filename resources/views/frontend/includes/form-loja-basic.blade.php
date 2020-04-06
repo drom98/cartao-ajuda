@@ -48,6 +48,25 @@
     <div class="card">
         <header class="card-header">
             <p class="card-header-title">
+                Página de compra
+            </p>
+        </header>
+        <div class="card-content">
+            <div class="content">
+                <div class="field">
+                    <label class="label">A sua mensagem</label>
+                    <div class="control">
+                        <textarea name="texto_compra" class="textarea has-fixed-size" placeholder="A sua mensagem..."></textarea>
+                    </div>
+                    <p class="help">Esta mensagem irá aparecer na sua página de compra. Descreva o seu negócio e deixe uma mensagem aos seus clientes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="column"></div>
+    <div class="card">
+        <header class="card-header">
+            <p class="card-header-title">
                 Página de agradecimento
             </p>
         </header>

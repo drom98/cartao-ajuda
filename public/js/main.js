@@ -6,4 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
             $notification.parentNode.removeChild($notification);
         });
     });
+
+
 });
