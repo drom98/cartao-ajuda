@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Loja;
 use App\Providers\RouteServiceProvider;
+use App\Services\lojaService;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
@@ -23,6 +24,8 @@ class RegisterController extends Controller
     |
     */
 
+    private $lojaService;
+
     use RegistersUsers;
 
     /**
@@ -35,11 +38,12 @@ class RegisterController extends Controller
     /**
      * Create a new controller instance.
      *
-     * @return void
+     * @param lojaService $lojaService
      */
-    public function __construct()
+    public function __construct(lojaService $lojaService)
     {
         $this->middleware('guest');
+        $this->lojaService = $lojaService;
     }
 
     public function attributes()
@@ -79,14 +83,11 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
 
-        $loja = Loja::create([
+        Loja::create([
             'nome' => $data['nome'],
-            'url' => str_replace(' ', '', $data['nome']),
+            'url' => $this->lojaService->createUrlFromName($data['nome']),
             'user_id' => $user->id,
         ]);
-
-        $user->loja_id = $loja->id;
-        $user->save();
 
         return $user;
     }

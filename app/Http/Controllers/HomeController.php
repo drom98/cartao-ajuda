@@ -28,11 +28,7 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {;
-        if(!Auth::user()->loja) {
-            return view('frontend.home')->with('lojaNaoConfigurada', 'Ainda não configurou a sua loja.');
-        }
-
+    {
         return view('frontend.home', [
             'loja' => Auth::user()->loja
         ]);

@@ -12,10 +12,10 @@
                 <span>Configurar loja</span>
             </a>
         </li>
-        <li>
-            <a class="has-text-grey-light" style="cursor: default">
-                <span class="icon is-small"><i class="fas fa-paper-plane"></i></span>
-                <span>Emails</span>
+        <li class="{{ (request()->is('instrucoes*')) ? 'is-active' : ''}}">
+            <a href="#">
+                <span class="icon is-small"><i class="fas fa-question-circle"></i></span>
+                <span>Instruções</span>
             </a>
         </li>
     </ul>

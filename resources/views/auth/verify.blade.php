@@ -20,7 +20,7 @@
                             </div>
                             @endif
 
-                            <p class="is-size-6 has-text-danger">
+                            <p class="is-size-6 has-text-grey">
                                 Não recebeu o email?
                             </p>
                             <form method="POST" action="{{ route('verification.resend') }}">

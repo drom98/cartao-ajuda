@@ -11,13 +11,18 @@
                 <div class="field">
                     <label class="label">Nome</label>
                     <div class="control">
-                        <input name="nome" class="input" type="text" placeholder="Nome da loja">
+                        <input name="nome" class="input" type="text" placeholder="Nome da loja" value="{{ $loja->nome }}">
                     </div>
                     <p class="help">O nome da sua loja irá aparecer na página de compra do cartão.</p>
                 </div>
 
                 <div class="field">
                     <label class="label">Logotipo</label>
+                    @if($loja->logo)
+                    <figure class="image is-96x96">
+                        <img src="https://bulma.io/images/placeholders/128x128.png">
+                    </figure>
+                    @endif
                     <div class="control">
                         <input name="logo" class="input" type="file">
                     </div>
