@@ -7,7 +7,7 @@
             </a>
         </li>
         <li class="{{ (request()->is('loja*')) ? 'is-active' : ''}}">
-            <a href="{{ route('home.loja') }}">
+            <a href="{{ route('loja.editar') }}">
                 <span class="icon is-small"><i class="fas fa-store"></i></span>
                 <span>Configurar loja</span>
             </a>

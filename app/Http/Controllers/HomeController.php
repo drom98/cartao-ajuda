@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Loja;
 use App\Services\lojaService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -42,9 +43,9 @@ class HomeController extends Controller
         ]);
     }
 
-    public function adicionarLoja(Request $request)
+    public function editarLoja(Request $request)
     {
-        $this->lojaService->make($request);
+        $this->lojaService->update($request);
 
         return redirect(route('home'))->with('message', 'Loja configurada com sucesso.');
     }

@@ -11,24 +11,25 @@ use Illuminate\Support\Facades\Auth;
 
 class lojaService
 {
-    public function make(Request $request)
+    public function update(Request $request)
     {
-        //dd($request);
-        $logo = $this->storeLogo($request);
+        $loja = Auth::user()->loja;
 
-        $loja = Loja::create([
-            'user_id' => Auth::id(),
+        if($request->hasFile('logo')) {
+            $logo = $this->storeLogo($request);
+        } else {
+            $logo = $loja->logo;
+        }
+
+        $loja->update([
             'nome' => $request->nome,
             'logo' => $logo,
-            'url' => $this->createUrlFromName($request->nome),
+            'texto_agradecimento' => $request->texto_agradecimento,
             'forma_pagamento' => $request->forma_pagamento,
             'texto_compra' => $request->texto_compra,
-            'texto_agradecimento' => $request->texto_agradecimento,
         ]);
 
-        $user = User::find(Auth::id());
-        $user->loja_id = $loja->id;
-        $user->save();
+        $loja->save();
 
         return $loja;
     }

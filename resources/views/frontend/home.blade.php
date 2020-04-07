@@ -2,9 +2,13 @@
 
 @section('content')
     <div class="container">
-        @isset($lojaNaoConfigurada)
-            @include('frontend.includes.mensagem-warning')
-        @endisset
+        @if(!$loja->forma_pagamento)
+            <div class="notification" style="background-color: #fffbeb; color: #947600;">
+                <button class="delete"></button>
+                <strong>Importante!</strong>
+                <p>Adicione as formas de pagamento pretendidos no separador "Configurar loja".</p>
+            </div>
+        @endif
 
         @isset($message)
             @include('frontend.frontend.includes.mensagem-sucesso')

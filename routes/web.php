@@ -24,7 +24,7 @@ Auth::routes(['verify' => true]);
 Route::middleware('verified')->group( function () {
 
     Route::get('/home', 'HomeController@index')->name('home');
-    Route::get('/loja', 'HomeController@definicoesLoja')->name('home.loja');
-    Route::post('/loja', 'HomeController@adicionarLoja')->name('home.addLoja');
+    Route::get('/loja', 'HomeController@definicoesLoja')->name('loja.home');
+    Route::post('/loja', 'HomeController@editarLoja')->name('loja.editar');
 });
 

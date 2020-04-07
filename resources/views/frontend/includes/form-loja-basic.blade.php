@@ -1,4 +1,4 @@
-<form action="{{ route('home.addLoja') }}" method="post" enctype="multipart/form-data">
+<form action="{{ route('loja.editar') }}" method="post" enctype="multipart/form-data">
     @csrf
     <div class="card">
         <header class="card-header">
@@ -20,7 +20,7 @@
                     <label class="label">Logotipo</label>
                     @if($loja->logo)
                     <figure class="image is-96x96">
-                        <img src="https://bulma.io/images/placeholders/128x128.png">
+                        <img src="{{ asset('logotipos_lojas').'/'.$loja->logo }}">
                     </figure>
                     @endif
                     <div class="control">
@@ -42,7 +42,7 @@
                 <div class="field">
                     <label class="label">Formas de pagamento</label>
                     <div class="control">
-                        <textarea name="forma_pagamento" class="textarea has-fixed-size" placeholder="Exemplo: MB WAY: 910000000&#10;IBAN: PT71003506512633898833605"></textarea>
+                        <textarea name="forma_pagamento" class="textarea has-fixed-size" placeholder="Exemplo: MB WAY: 910000000&#10;IBAN: PT71003506512633898833605">{{ $loja->forma_pagamento }}</textarea>
                     </div>
                     <p class="help">As formas de pagamento que inserir aqui serão enviadas no email que o cliente irá receber assim que comprar um cartão.</p>
                 </div>
@@ -61,7 +61,7 @@
                 <div class="field">
                     <label class="label">A sua mensagem</label>
                     <div class="control">
-                        <textarea name="texto_compra" class="textarea has-fixed-size" placeholder="A sua mensagem..."></textarea>
+                        <textarea name="texto_compra" class="textarea has-fixed-size" placeholder="A sua mensagem...">{{ $loja->texto_compra }}</textarea>
                     </div>
                     <p class="help">Esta mensagem irá aparecer na sua página de compra. Descreva o seu negócio e deixe uma mensagem aos seus clientes.</p>
                 </div>
@@ -80,7 +80,7 @@
                 <div class="field">
                     <label class="label">A sua mensagem</label>
                     <div class="control">
-                        <textarea name="texto_agradecimento" class="textarea has-fixed-size" placeholder="Escreva a sua mensagem de agradecimento"></textarea>
+                        <textarea name="texto_agradecimento" class="textarea has-fixed-size" placeholder="Escreva a sua mensagem de agradecimento">{{ $loja->texto_agradecimento }}</textarea>
                     </div>
                     <p class="help">Esta mensagem irá aparecer na página de agradecimento que surge assim que o cliente efetua a compra de um cartão.</p>
                 </div>
