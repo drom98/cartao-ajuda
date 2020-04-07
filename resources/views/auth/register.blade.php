@@ -1,77 +1,89 @@
-@extends('frontend.layouts.app')
+@extends('auth.layouts.layout')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+    <section class="hero is-fullheight">
+        <div class="hero-body" id="login-container">
+            <div class="container">
+                <div class="columns is-centered">
+                    <div class="column is-4">
+                        <div class="card">
+                            <div class="card-content">
+                                <h2 class="subtitle is-6 has-text-centered">Venda HelpCards aos seus clientes e ajude o seu negócio! 🙏️👋️</h2>
+                                <h1 class="title has-text-link is-4 has-text-centered">Criar nova conta</h1>
+                                @if ($errors->any())
+                                    <div class="notification is-danger is-light" style="background-color: #feecf0; color: #cc0f35;">
+                                        <button class="delete"></button>
+                                        @foreach($errors->all() as $error)
+                                            <ul>
+                                                <li>{{ $error }}</li>
+                                            </ul>
+                                        @endforeach
+                                    </div>
+                                @endif
+                                <form method="POST" action="{{ route('register') }}">
+                                    @csrf
+                                    <div class="field">
+                                        <label class="label">Nome:</label>
+                                        <div class="control has-icons-left">
+                                            <input name="name" type="text" class="input @error('name') is-invalid @enderror" placeholder="Insira o seu primeiro e último nome..." value="{{ old('name') }}" required>
+                                            <span class="icon is-small is-left">
+                                                <i class="fas fa-user"></i>
+                                            </span>
+                                        </div>
+                                        <p id="nome" class="help is-danger is-hidden">O nome que introduziu não existe.</p>
+                                    </div>
+                                    <div class="field">
+                                        <label class="label">Email:</label>
+                                        <div class="control has-icons-left">
+                                            <input name="email" type="email" class="input @error('email') is-invalid @enderror" placeholder="Insira o seu email..." value="{{ old('email') }}" required>
+                                            <span class="icon is-small is-left">
+                                                <i class="fas fa-envelope"></i>
+                                            </span>
+                                        </div>
+                                        <p id="nome" class="help is-danger is-hidden">O nome que introduziu não existe.</p>
+                                    </div>
+                                    <div class="field">
+                                        <label class="label">Nome do seu negócio:</label>
+                                        <div class="control has-icons-left">
+                                            <input name="nome" type="text" class="input @error('nome') is-invalid @enderror" placeholder="Insira o nome do seu negócio..." value="{{ old('nome') }}" required>
+                                            <span class="icon is-small is-left">
+                                                <i class="fas fa-briefcase"></i>
+                                            </span>
+                                        </div>
+                                        <p id="nome" class="help is-danger is-hidden">O nome que introduziu não existe.</p>
+                                    </div>
+                                    <div class="field">
+                                        <label class="label">Password:</label>
+                                        <div class="control has-icons-left">
+                                            <input name="password" type="password" class="input" placeholder="Insira a sua password..." required>
+                                            <span class="icon is-small is-left">
+                                                <i class="fas fa-lock"></i>
+                                            </span>
+                                        </div>
+                                        <p id="password" class="help is-danger is-hidden">Password errada.</p>
+                                    </div>
+                                    <div class="field">
+                                        <label class="label">Confirme a password:</label>
+                                        <div class="control has-icons-left">
+                                            <input name="password_confirmation" type="password" class="input" placeholder="Insira novamente a sua password..." required>
+                                            <span class="icon is-small is-left">
+                                                <i class="fas fa-lock"></i>
+                                            </span>
+                                        </div>
+                                        <p id="password" class="help is-danger is-hidden">Password errada.</p>
+                                    </div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                    <div class="field">
+                                        <div class="control">
+                                            <input type="submit" class="button is-link is-fullwidth" value="Entrar">
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </section>
 @endsection

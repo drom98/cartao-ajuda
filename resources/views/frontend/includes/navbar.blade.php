@@ -34,14 +34,17 @@
                     </div>
                 </div>
                 @endguest
-                <div class="navbar-item">
-                    <a class="button is-link is-light is-small">
-                        <strong>
-                            <i class="fas fa-external-link-alt"></i>
-                            Abrir loja
-                        </strong>
-                    </a>
-                </div>
+                @isset($loja)
+                    <div class="navbar-item">
+                        <a class="button is-link is-light is-small" href="{{ route('loja.front', $loja->url) }}" target="_blank">
+                            <strong>
+                                <i class="fas fa-external-link-alt"></i>
+                                Abrir loja
+                            </strong>
+                        </a>
+                    </div>
+                @endisset
+
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link">
                         {{ Auth::user()->name }}

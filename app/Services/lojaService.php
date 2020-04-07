@@ -20,6 +20,7 @@ class lojaService
             'user_id' => Auth::id(),
             'nome' => $request->nome,
             'logo' => $logo,
+            'url' => str_replace(' ', '', $request->nome),
             'forma_pagamento' => $request->forma_pagamento,
             'texto_compra' => $request->texto_compra,
             'texto_agradecimento' => $request->texto_agradecimento,

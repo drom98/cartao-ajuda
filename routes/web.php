@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/loja/{nome}', 'LojaController@paginaLoja');
+Route::get('/loja/{url}', 'LojaController@paginaLoja')->name('loja.front');
 
 Auth::routes(['verify' => true]);
 

@@ -10,6 +10,7 @@ class HomeController extends Controller
 {
 
     private $lojaService;
+
     /**
      * Create a new controller instance.
      *
@@ -27,17 +28,22 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {
-        if(!Auth::user()->loja_id) {
+    {;
+        if(!Auth::user()->loja) {
             return view('frontend.home')->with('lojaNaoConfigurada', 'Ainda não configurou a sua loja.');
         }
 
-        return view('frontend.home');
+        return view('frontend.home', [
+            'loja' => Auth::user()->loja
+        ]);
     }
 
     public function definicoesLoja()
     {
-        return view('frontend.loja');
+
+        return view('frontend.loja', [
+            'loja' => Auth::user()->loja
+        ]);
     }
 
     public function adicionarLoja(Request $request)

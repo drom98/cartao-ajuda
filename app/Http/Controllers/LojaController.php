@@ -93,9 +93,9 @@ class LojaController extends Controller
         //
     }
 
-    public function paginaLoja($nome)
+    public function paginaLoja($url)
     {
-        $loja = Loja::where('nome', $nome)->first();
+        $loja = Loja::where('url', $url)->first();
 
         return view('loja.index')->with('loja', $loja);
     }
