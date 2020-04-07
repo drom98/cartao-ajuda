@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Loja;
 use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -72,10 +73,21 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
+        $loja = Loja::create([
+            'nome' => $data['nome'],
+            'url' => str_replace(' ', '', $data['nome']),
+            'user_id' => $user->id,
+        ]);
+
+        $user->loja_id = $loja->id;
+        $user->save();
+
+        return $user;
     }
 }

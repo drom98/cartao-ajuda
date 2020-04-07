@@ -40,6 +40,8 @@
                                     </div>
                                 </form>
                             </div>
+                            <p class="has-text-centered">Ainda não tem conta? É rápido!</p>
+                            <a href="{{ route('register') }}" class="button is-fullwidth is-text has-text-link has-text-centered">Criar nova conta</a>
                         </div>
                     </div>
                 </div>
