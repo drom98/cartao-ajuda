@@ -75,11 +75,13 @@
 
                                     <div class="field">
                                         <div class="control">
-                                            <input type="submit" class="button is-link is-fullwidth" value="Entrar">
+                                            <input type="submit" class="button is-link is-fullwidth" value="Criar conta">
                                         </div>
                                     </div>
                                 </form>
                             </div>
+                            <p class="has-text-centered">Já tem conta?</p>
+                            <a href="{{ route('login') }}" class="button is-fullwidth is-text has-text-link has-text-centered">Iniciar sessão</a>
                         </div>
                     </div>
                 </div>

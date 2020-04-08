@@ -18,15 +18,16 @@
                 {{ $loja->texto_compra }}
             </p>
             <div class="column"></div>
-            <form action="" method="post">
+            <form action="/cartao" method="post">
+                @csrf
                 <p class="has-text-grey">Seleciona a quantia do seu cartão:</p>
                 <div class="field">
-                    <input class="is-checkradio is-link" id="exampleRadioInline1" type="radio" name="exampleRadioInline" checked="checked">
-                    <label for="exampleRadioInline1">10€</label>
-                    <input class="is-checkradio is-link" id="exampleRadioInline2" type="radio" name="exampleRadioInline">
-                    <label for="exampleRadioInline2">20€</label>
-                    <input class="is-checkradio is-link" id="exampleRadioInline3" type="radio" name="exampleRadioInline">
-                    <label for="exampleRadioInline3">30€</label>
+                    <input class="is-checkradio is-link" id="valor1" type="radio" name="valor" checked="checked">
+                    <label for="valor1">10€</label>
+                    <input class="is-checkradio is-link" id="valor2" type="radio" name="valor">
+                    <label for="valor2">20€</label>
+                    <input class="is-checkradio is-link" id="valor3" type="radio" name="valor">
+                    <label for="valor3">30€</label>
                 </div>
                 <div class="box has-background-dark has-text-white">
                     <div class="columns has-text-left">

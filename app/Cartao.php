@@ -10,10 +10,13 @@ class Cartao extends Model
 
     protected $fillable = [
         'loja_id',
+        'nome',
+        'apelido',
         'email_cliente',
         'valor',
         'data_fim',
         'estado',
+        'card_code',
     ];
 
     public function loja()

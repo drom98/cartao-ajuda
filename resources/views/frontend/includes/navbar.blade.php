@@ -36,7 +36,7 @@
                 @endguest
                 @isset($loja)
                     <div class="navbar-item">
-                        <a class="button is-link is-light is-small" href="{{ route('loja.front', $loja->url) }}" target="_blank">
+                        <a class="button is-link is-light is-small" href="{{ route('cartao.front', $loja->url) }}" target="_blank">
                             <strong>
                                 <i class="fas fa-external-link-alt"></i>
                                 Abrir loja

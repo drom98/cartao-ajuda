@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cartao;
+use App\Loja;
 use Illuminate\Http\Request;
 
 class CartaoController extends Controller
@@ -20,11 +21,13 @@ class CartaoController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function create()
+    public function create($url)
     {
-        //
+        $loja = Loja::where('url', $url)->firstOrFail();
+
+        return view('loja.index')->with('loja', $loja);
     }
 
     /**

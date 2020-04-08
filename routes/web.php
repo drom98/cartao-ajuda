@@ -17,7 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/loja/{url}', 'LojaController@paginaLoja')->name('loja.front');
+Route::get('/loja/{url}', 'CartaoController@create')->name('cartao.front');
+Route::post('/cartao', 'CartaoController@store');
 
 Auth::routes(['verify' => true]);
 
