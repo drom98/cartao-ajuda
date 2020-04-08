@@ -14,7 +14,9 @@ class AddPagamentosColumnToLojasTable extends Migration
     public function up()
     {
         Schema::table('lojas', function (Blueprint $table) {
-            //
+            $table->string('iban', 25)->nullable();
+            $table->tinyInteger('mb_way')->nullable();
+            $table->string('paypal')->nullable();
         });
     }
 

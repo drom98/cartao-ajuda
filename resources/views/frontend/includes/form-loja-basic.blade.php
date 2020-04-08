@@ -34,18 +34,44 @@
     <div class="card">
         <header class="card-header">
             <p class="card-header-title">
-                Formas de pagamento
+                Métodos de pagamento
             </p>
         </header>
         <div class="card-content">
             <div class="content">
-                <div class="field">
-                    <label class="label">Formas de pagamento</label>
-                    <div class="control">
-                        <textarea name="forma_pagamento" class="textarea has-fixed-size" placeholder="Exemplo: MB WAY: 910000000&#10;IBAN: PT71003506512633898833605">{{ $loja->forma_pagamento }}</textarea>
-                    </div>
-                    <p class="help">As formas de pagamento que inserir aqui serão enviadas no email que o cliente irá receber assim que comprar um cartão.</p>
+                <p>
+                    <span class="icon has-text-info">
+                      <i class="fas fa-info-circle"></i>
+                    </span>
+                    <span class="has-text-grey">
+                    Pode deixar em branco os métodos que não necessita.
+                    </span>
+                </p>
+
+                <label class="label">IBAN</label>
+                <div class="field has-addons">
+                    <p class="control">
+                        <a class="button is-static">
+                            PT50
+                        </a>
+                    </p>
+                    <p class="control is-expanded">
+                        <input name="iban" class="input" type="text" placeholder="Insira o seu IBAN...">
+                    </p>
                 </div>
+                <div class="field">
+                    <label class="label">MB WAY</label>
+                    <div class="control">
+                        <input name="mb_way" class="input" type="tel" placeholder="Insira o seu número de telemóvel associado ao MB WAY">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">PayPal</label>
+                    <div class="control">
+                        <input name="paypal" class="input" type="email" placeholder="Insira o seu email do PayPal">
+                    </div>
+                </div>
+                <p class="help">Os métodos de pagamento que inserir aqui serão enviadas no email que o cliente irá receber assim que comprar um cartão.</p>
             </div>
         </div>
     </div>
