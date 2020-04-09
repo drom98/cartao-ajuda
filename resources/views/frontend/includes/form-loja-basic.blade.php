@@ -43,7 +43,7 @@
                     <span class="icon has-text-info">
                       <i class="fas fa-info-circle"></i>
                     </span>
-                    <span class="has-text-grey">
+                    <span class="has-text-info">
                     Pode deixar em branco os métodos que não necessita.
                     </span>
                 </p>
@@ -56,22 +56,22 @@
                         </a>
                     </p>
                     <p class="control is-expanded">
-                        <input name="iban" class="input" type="text" placeholder="Insira o seu IBAN...">
+                        <input name="iban" class="input" type="text" placeholder="Insira o seu IBAN..." value="{{ $loja->iban }}">
                     </p>
                 </div>
                 <div class="field">
                     <label class="label">MB WAY</label>
                     <div class="control">
-                        <input name="mb_way" class="input" type="tel" placeholder="Insira o seu número de telemóvel associado ao MB WAY">
+                        <input name="mb_way" class="input" type="tel" placeholder="Insira o seu número de telemóvel associado ao MB WAY" value="{{ $loja->mb_way }}">
                     </div>
                 </div>
                 <div class="field">
                     <label class="label">PayPal</label>
                     <div class="control">
-                        <input name="paypal" class="input" type="email" placeholder="Insira o seu email do PayPal">
+                        <input name="paypal" class="input" type="email" placeholder="Insira o seu email do PayPal" value="{{ $loja->paypal }}">
                     </div>
                 </div>
-                <p class="help">Os métodos de pagamento que inserir aqui serão enviadas no email que o cliente irá receber assim que comprar um cartão.</p>
+                <p class="help">Os métodos de pagamento que inserir aqui serão enviados no email que o cliente irá receber assim que comprar um cartão.</p>
             </div>
         </div>
     </div>

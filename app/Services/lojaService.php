@@ -8,12 +8,13 @@ use App\Loja;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 
 class lojaService
 {
     public function update(Request $request)
     {
-        //$this->validarDados($request);
+        $this->validarDados($request);
 
         $loja = Auth::user()->loja;
 
@@ -55,14 +56,19 @@ class lojaService
 
     private function validarDados($request)
     {
+        //dd($request);
         return $request->validate([
-            'nome' => 'required|unique:lojas|max:120',
-            'logo' => 'file|image',
+            'nome' => [
+                'required',
+                Rule::unique('users', 'name')->ignore('user'),
+                'max: 80'
+                ],
+            'logo' => 'nullable|file|image',
             'texto_agradecimento' => 'required',
             'texto_compra' => 'required',
-            'iban' => 'size:25',
-            'mb_way' => 'size:9',
-            'paypal' => 'email',
+            'iban' => 'nullable|size:21',
+            'mb_way' => 'nullable|size:9',
+            'paypal' => 'nullable|email',
         ]);
     }
 
