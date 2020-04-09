@@ -13,6 +13,8 @@ class lojaService
 {
     public function update(Request $request)
     {
+        //$this->validarDados($request);
+
         $loja = Auth::user()->loja;
 
         if($request->hasFile('logo')) {
@@ -25,7 +27,9 @@ class lojaService
             'nome' => $request->nome,
             'logo' => $logo,
             'texto_agradecimento' => $request->texto_agradecimento,
-            'forma_pagamento' => $request->forma_pagamento,
+            'iban' => $request->iban,
+            'mb_way' => $request->mb_way,
+            'paypal' => $request->paypal,
             'texto_compra' => $request->texto_compra,
         ]);
 
@@ -47,6 +51,19 @@ class lojaService
     public function createUrlFromName($name)
     {
         return strtolower(str_replace(' ', '', $name));
+    }
+
+    private function validarDados($request)
+    {
+        return $request->validate([
+            'nome' => 'required|unique:lojas|max:120',
+            'logo' => 'file|image',
+            'texto_agradecimento' => 'required',
+            'texto_compra' => 'required',
+            'iban' => 'size:25',
+            'mb_way' => 'size:9',
+            'paypal' => 'email',
+        ]);
     }
 
 }

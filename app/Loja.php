@@ -14,7 +14,9 @@ class Loja extends Model
         'nome',
         'logo',
         'url',
-        'forma_pagamento',
+        'iban',
+        'mb_way',
+        'paypal',
         'texto_compra',
         'texto_agradecimento',
     ];
