@@ -2,11 +2,11 @@
 
 @section('content')
     <div class="container">
-        @if(!$loja->forma_pagamento)
+        @if(!$loja->iban && !$loja->mb_way && !$loja->paypal)
             <div class="notification" style="background-color: #fffbeb; color: #947600;">
                 <button class="delete"></button>
                 <strong>Importante!</strong>
-                <p>Adicione as formas de pagamento pretendidos no separador "Configurar loja".</p>
+                <p>Adicione pelo menos um método de pagamento no separador "Configurar loja".</p>
             </div>
         @endif
 
