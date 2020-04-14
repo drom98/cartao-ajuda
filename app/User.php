@@ -40,8 +40,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-    public function loja()
+    public function negocio()
     {
-        return $this->hasOne('App\Loja', 'user_id');
+        return $this->hasOne('App\Negocio', 'user_id');
     }
 }

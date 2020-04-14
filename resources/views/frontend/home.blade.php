@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        @if(!$loja->iban && !$loja->mb_way && !$loja->paypal)
+        @if(count($metodos_pagamento) <= 0)
             <div class="notification" style="background-color: #fffbeb; color: #947600;">
                 <button class="delete"></button>
                 <strong>Importante!</strong>

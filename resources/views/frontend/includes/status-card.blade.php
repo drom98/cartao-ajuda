@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-content">
         <p class="card-subtitle has-text-weight-bold has-text-link">
-            {{ $loja->nome }}
+            {{ $negocio->nome }}
         </p>
         <p class="card-subtitle has-text-weight-bold has-text-grey-dark">
             Total angariado: 40€

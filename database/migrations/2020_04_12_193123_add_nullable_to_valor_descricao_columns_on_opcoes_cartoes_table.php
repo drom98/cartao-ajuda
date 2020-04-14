@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class RenameTextoPosCompraColumn extends Migration
+class AddNullableToValorDescricaoColumnsOnOpcoesCartoesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class RenameTextoPosCompraColumn extends Migration
      */
     public function up()
     {
-        Schema::table('lojas', function (Blueprint $table) {
-            $table->renameColumn('texto_pos_compra', 'texto_agradecimento');
+        Schema::table('opcoes_cartoes', function (Blueprint $table) {
+            $table->integer('valor')->nullable()->change();
+            $table->string('descricao')->nullable()->change();
         });
     }
 
@@ -25,7 +26,7 @@ class RenameTextoPosCompraColumn extends Migration
      */
     public function down()
     {
-        Schema::table('lojas', function (Blueprint $table) {
+        Schema::table('opcoes_cartoes', function (Blueprint $table) {
             //
         });
     }

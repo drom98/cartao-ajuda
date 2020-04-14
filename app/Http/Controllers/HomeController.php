@@ -3,24 +3,30 @@
 namespace App\Http\Controllers;
 
 use App\Loja;
+use App\MetodoPagamento;
 use App\Services\lojaService;
+use App\Services\negocioService;
+use App\Services\opcaoCartaoService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
 
-    private $lojaService;
+    private $negocioService;
+    private $opcaoCartaoService;
 
     /**
      * Create a new controller instance.
      *
-     * @return void
+     * @param negocioService $negocioService
+     * @param opcaoCartaoService $opcaoCartaoService
      */
-    public function __construct(lojaService $lojaService)
+    public function __construct(negocioService $negocioService, opcaoCartaoService $opcaoCartaoService)
     {
         $this->middleware('auth');
-        $this->lojaService = $lojaService;
+        $this->negocioService = $negocioService;
+        $this->opcaoCartaoService = $opcaoCartaoService;
     }
 
     /**
@@ -30,22 +36,25 @@ class HomeController extends Controller
      */
     public function index()
     {
+        //dd(count(MetodoPagamento::all()));
         return view('frontend.home', [
-            'loja' => Auth::user()->loja
+            'negocio' => Auth::user()->negocio,
+            'metodos_pagamento' => MetodoPagamento::all()
         ]);
     }
 
-    public function definicoesLoja()
+    public function definicoesNegocio()
     {
 
         return view('frontend.loja', [
-            'loja' => Auth::user()->loja
+            'negocio' => Auth::user()->negocio
         ]);
     }
 
-    public function editarLoja(Request $request)
+    public function editarNegocio(Request $request)
     {
-        $this->lojaService->update($request);
+        $this->negocioService->update($request);
+        $this->opcaoCartaoService->update($request);
 
         return redirect(route('home'))->with('message', 'Loja configurada com sucesso.');
     }

@@ -10,6 +10,15 @@
                             <div class="card-content">
                                 <h2 class="subtitle is-6 has-text-centered">Bem vindo de volta!👋️</h2>
                                 <h1 class="title has-text-link is-4 has-text-centered">Iniciar sessão</h1>
+                                @if ($errors->any())
+                                    <div class="notification is-danger is-light" style="background-color: #feecf0; color: #cc0f35;">
+                                        <ul>
+                                            @foreach($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
                                 <form method="POST" action="{{ route('login') }}">
                                     @csrf
                                     <div class="field">

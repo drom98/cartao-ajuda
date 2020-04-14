@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCartoesTable extends Migration
+class CreateMetodoPagamentosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,14 @@ class CreateCartoesTable extends Migration
      */
     public function up()
     {
-        Schema::create('cartoes', function (Blueprint $table) {
+        Schema::create('metodo_pagamentos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('loja_id');
-            $table->string('email_cliente');
-            $table->tinyInteger('valor');
-            $table->date('data_fim');
-            $table->boolean('estado');
+            $table->foreignId('negocio_id');
+            $table->string('nome');
+            $table->string('descricao');
             $table->timestamps();
 
-            $table->foreign('loja_id')->references('id')->on('lojas');
+            $table->foreign('negocio_id')->references('id')->on('negocios');
         });
     }
 
@@ -33,6 +31,6 @@ class CreateCartoesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cartoes');
+        Schema::dropIfExists('metodo_pagamentos');
     }
 }

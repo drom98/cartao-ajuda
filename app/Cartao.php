@@ -9,18 +9,20 @@ class Cartao extends Model
     protected $table = 'cartoes';
 
     protected $fillable = [
-        'loja_id',
-        'nome',
-        'apelido',
-        'email_cliente',
-        'valor',
-        'data_fim',
+        'opcao_id',
+        'negocio_id',
+        'nome_cliente',
+        'apelido_cliente',
         'estado',
-        'card_code',
     ];
 
-    public function loja()
+    public function opcao_cartao()
     {
-        return $this->belongsTo('App\Loja', 'loja_id');
+        return $this->belongsTo('App\OpcaoCartao');
+    }
+
+    public function negocio()
+    {
+        return $this->belongsTo('App\Negocio');
     }
 }

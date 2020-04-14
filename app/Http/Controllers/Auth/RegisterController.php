@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Loja;
 use App\Providers\RouteServiceProvider;
 use App\Services\lojaService;
+use App\Services\negocioService;
+use App\Services\opcaoCartaoService;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
@@ -24,7 +26,8 @@ class RegisterController extends Controller
     |
     */
 
-    private $lojaService;
+    private $negocioService;
+    private $opcaoCartaoService;
 
     use RegistersUsers;
 
@@ -38,19 +41,14 @@ class RegisterController extends Controller
     /**
      * Create a new controller instance.
      *
-     * @param lojaService $lojaService
+     * @param negocioService $negocioService
+     * @param opcaoCartaoService $opcaoCartaoService
      */
-    public function __construct(lojaService $lojaService)
+    public function __construct(negocioService $negocioService, opcaoCartaoService $opcaoCartaoService)
     {
         $this->middleware('guest');
-        $this->lojaService = $lojaService;
-    }
-
-    public function attributes()
-    {
-        return [
-            'nome' => 'Nome de negócio',
-        ];
+        $this->negocioService = $negocioService;
+        $this->opcaoCartaoService = $opcaoCartaoService;
     }
 
     /**
@@ -62,8 +60,8 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'nome' => ['required', 'string', 'max:255', 'unique:lojas'],
+            'name' => ['required', 'string', 'max:120'],
+            'nome' => ['required', 'string', 'max:80', 'unique:negocios'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
         ]);
@@ -83,11 +81,8 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
 
-        Loja::create([
-            'nome' => $data['nome'],
-            'url' => $this->lojaService->createUrlFromName($data['nome']),
-            'user_id' => $user->id,
-        ]);
+        $this->negocioService->create($data, $user);
+        $this->opcaoCartaoService->create($user);
 
         return $user;
     }

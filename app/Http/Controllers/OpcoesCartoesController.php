@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Cartao;
+use App\OpcaoCartao;
 use Illuminate\Http\Request;
 
-class CartaoController extends Controller
+class OpcoesCartoesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class CartaoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Cartao  $cartao
+     * @param  \App\OpcaoCartao  $opcoesCartoes
      * @return \Illuminate\Http\Response
      */
-    public function show(Cartao $cartao)
+    public function show(OpcaoCartao $opcoesCartoes)
     {
         //
     }
@@ -52,10 +52,10 @@ class CartaoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Cartao  $cartao
+     * @param  \App\OpcaoCartao  $opcoesCartoes
      * @return \Illuminate\Http\Response
      */
-    public function edit(Cartao $cartao)
+    public function edit(OpcaoCartao $opcoesCartoes)
     {
         //
     }
@@ -64,10 +64,10 @@ class CartaoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Cartao  $cartao
+     * @param  \App\OpcaoCartao  $opcoesCartoes
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Cartao $cartao)
+    public function update(Request $request, OpcaoCartao $opcoesCartoes)
     {
         //
     }
@@ -75,10 +75,10 @@ class CartaoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Cartao  $cartao
+     * @param  \App\OpcaoCartao  $opcoesCartoes
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Cartao $cartao)
+    public function destroy(OpcaoCartao $opcoesCartoes)
     {
         //
     }

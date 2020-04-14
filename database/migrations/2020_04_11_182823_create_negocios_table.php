@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLojasTable extends Migration
+class CreateNegociosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateLojasTable extends Migration
      */
     public function up()
     {
-        Schema::create('lojas', function (Blueprint $table) {
+        Schema::create('negocios', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->string('nome', 50);
-            $table->string('logo');
-            $table->text('texto_pos_compra');
+            $table->string('nome', 80)->unique();
+            $table->string('logo')->nullable();
+            $table->text('texto_compra');
+            $table->text('texto_agradecimento');
+            $table->string('url')->unique();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');
@@ -32,6 +34,6 @@ class CreateLojasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lojas');
+        Schema::dropIfExists('negocios');
     }
 }

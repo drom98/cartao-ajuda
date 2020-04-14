@@ -6,10 +6,10 @@
                 <span>Gerir cartões</span>
             </a>
         </li>
-        <li class="{{ (request()->is('loja*')) ? 'is-active' : ''}}">
+        <li class="{{ (request()->is('settings*')) ? 'is-active' : ''}}">
             <a href="{{ route('loja.editar') }}">
                 <span class="icon is-small"><i class="fas fa-store"></i></span>
-                <span>Configurar loja</span>
+                <span>Configurar página</span>
             </a>
         </li>
         <li class="{{ (request()->is('instrucoes*')) ? 'is-active' : ''}}">

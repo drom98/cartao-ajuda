@@ -2,21 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Loja;
-use App\Services\lojaService;
+use App\Negocio;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class LojaController extends Controller
+class NegocioController extends Controller
 {
-
-    private $lojaService;
-
-    public function __construct(LojaService $lojaService)
-    {
-        $this->lojaService = $lojaService;
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -45,16 +35,16 @@ class LojaController extends Controller
      */
     public function store(Request $request)
     {
-        $this->lojaService->make($request);
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Loja  $loja
+     * @param  \App\Negocio  $negocio
      * @return \Illuminate\Http\Response
      */
-    public function show(Loja $loja)
+    public function show(Negocio $negocio)
     {
         //
     }
@@ -62,10 +52,10 @@ class LojaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Loja  $loja
+     * @param  \App\Negocio  $negocio
      * @return \Illuminate\Http\Response
      */
-    public function edit(Loja $loja)
+    public function edit(Negocio $negocio)
     {
         //
     }
@@ -74,10 +64,10 @@ class LojaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Loja  $loja
+     * @param  \App\Negocio  $negocio
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Loja $loja)
+    public function update(Request $request, Negocio $negocio)
     {
         //
     }
@@ -85,18 +75,11 @@ class LojaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Loja  $loja
+     * @param  \App\Negocio  $negocio
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Loja $loja)
+    public function destroy(Negocio $negocio)
     {
         //
-    }
-
-    public function paginaLoja($url)
-    {
-        $loja = Loja::where('url', $url)->firstOrFail();
-
-        return view('loja.index')->with('loja', $loja);
     }
 }

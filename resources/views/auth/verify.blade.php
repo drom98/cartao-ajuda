@@ -12,7 +12,7 @@
                                 <i class="fas fa-paper-plane"></i>
                             </p>
                             <h1 class="title has-text-centered">Bem vindo ao Cartão Ajuda!</h1>
-                            <p class="subtitle has-text-centered">Para continuar necessita de ir ao seu email e clicar no link de confirmação.</p>
+                            <p class="subtitle has-text-centered">Para continuar necessita de confirmar o seu email.</p>
 
                             @if (session('resent'))
                             <div class="notification is-success" style="background-color: #effaf3; color: #257942;">
@@ -25,7 +25,7 @@
                             </p>
                             <form method="POST" action="{{ route('verification.resend') }}">
                                 @csrf
-                                <button type="submit" class="button is-text">Clique aqui para enviar novamente</button>.
+                                <button type="submit" class="button is-text">Clique aqui para enviar novamente</button>
                             </form>
                         </div>
                     </div>
