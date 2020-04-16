@@ -63,6 +63,14 @@
                     </div>
                 </div>
 
+                @if ($errors->any())
+                    <div class="notification is-danger is-light" style="background-color: #feecf0; color: #cc0f35;">
+                        @foreach( $errors->all() as $erro)
+                            {{ $erro }}
+                        @endforeach
+                    </div>
+                @endif
+                <input type="hidden" name="negocio_id" value="{{ $negocio->id }}">
                 <div class="field">
                     <label class="label has-text-grey has-text-left">Nome:</label>
                     <div class="control">

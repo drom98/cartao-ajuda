@@ -3,10 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Cartao;
+use App\Services\cartaoService;
 use Illuminate\Http\Request;
 
 class CartaoController extends Controller
 {
+
+    private $cartaoService;
+
+    public function __construct(cartaoService $cartaoService)
+    {
+        $this->cartaoService = $cartaoService;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -31,11 +40,13 @@ class CartaoController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return void
      */
     public function store(Request $request)
     {
-        dd($request);
+        $this->cartaoService->create($request);
+
+        return view('');
     }
 
     /**

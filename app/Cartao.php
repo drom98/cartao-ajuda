@@ -13,6 +13,7 @@ class Cartao extends Model
         'negocio_id',
         'nome_cliente',
         'apelido_cliente',
+        'email',
         'estado',
     ];
 
