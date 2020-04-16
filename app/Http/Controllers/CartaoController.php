@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cartao;
+use App\Negocio;
 use App\Services\cartaoService;
 use Illuminate\Http\Request;
 
@@ -46,7 +47,7 @@ class CartaoController extends Controller
     {
         $this->cartaoService->create($request);
 
-        return view('');
+        return view('negocio.agradecimento')->with('negocio', Negocio::find($request->negocio_id));
     }
 
     /**
