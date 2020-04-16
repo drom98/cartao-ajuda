@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ $loja->nome }}</title>
+    <title>{{ $negocio->nome }}</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -24,7 +24,7 @@
 <section class="section">
     <div class="content">
         <div class="columns is-centered">
-            <div class="column is-4">
+            <div class="column is-4-desktop is-12-mobile is-8-tablet">
                 @yield('content')
             </div>
         </div>

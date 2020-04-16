@@ -17,7 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/store/{url}', 'CartaoController@create')->name('cartao.front');
+Route::get('/store/{url}', 'NegocioController@index')->name('negocio.front');
+Route::get('/store/getOpcao/{id}', 'NegocioController@getOpcao');
 Route::post('/cartao', 'CartaoController@store');
 
 Auth::routes(['verify' => true]);
@@ -25,7 +26,7 @@ Auth::routes(['verify' => true]);
 Route::middleware('verified')->group( function () {
 
     Route::get('/home', 'HomeController@index')->name('home');
-    Route::get('/settings', 'HomeController@definicoesNegocio')->name('loja.home');
-    Route::post('/settings', 'HomeController@editarNegocio')->name('loja.editar');
+    Route::get('/settings', 'HomeController@definicoesNegocio')->name('negocio.home');
+    Route::post('/settings', 'HomeController@editarNegocio')->name('negocio.editar');
 });
 

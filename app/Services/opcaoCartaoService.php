@@ -28,7 +28,7 @@ class opcaoCartaoService
     public function update($request)
     {
         $opcoes = Auth::user()->negocio->opcoes_cartoes;
-        
+
         foreach ($opcoes as $key => $opcao) {
             $opcao->update([
                 'valor' => $request->valor[$key],

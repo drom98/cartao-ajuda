@@ -12,9 +12,11 @@ class NegocioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($url)
     {
-        //
+        $negocio = Negocio::where('url', $url)->firstOrFail();
+
+        return view('negocio.index')->with('negocio', $negocio);
     }
 
     /**

@@ -1,4 +1,4 @@
-<form action="{{ route('loja.editar') }}" method="post" enctype="multipart/form-data">
+<form action="{{ route('negocio.editar') }}" method="post" enctype="multipart/form-data">
     @csrf
     <div class="card">
         <header class="card-header">

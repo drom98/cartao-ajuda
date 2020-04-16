@@ -7,5 +7,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    var opcoes = $('#opcoes').find(':input');
+    var valores = $('#opcoes').find('label');
 
+    opcoes.each(function (index) {
+        $(this).on('click', function () {
+            switch (this.value) {
+                case '1':
+                    $('#valor').text(valores[index].textContent);
+                    break;
+                case '2':
+                    $('#valor').text(valores[index].textContent);
+                    break;
+                case '3':
+                    $('#valor').text(valores[index].textContent);
+                    break;
+            }
+        })
+    })
 });

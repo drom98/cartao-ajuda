@@ -1,39 +1,54 @@
-@extends('loja.layout')
+@extends('negocio.layout')
 
 @section('content')
     <div class="card has-text-centered">
         <div class="card-content">
+            @if( $negocio->logo )
             <div class="columns is-centered">
                 <div class="column">
                     <figure class="image is-128x128" style="margin: 0 auto;">
-                        <img src="{{ asset('logotipos_lojas/'. $loja->logo ) }}" class="is-vcentered">
+                        <img src="{{ asset('logotipos_lojas/'. $negocio->logo ) }}" class="is-vcentered">
                     </figure>
                 </div>
             </div>
+            @endif
 
             <p class="title">
-                {{ $loja->nome }}
+                {{ $negocio->nome }}
             </p>
             <p class="subtitle">
-                {{ $loja->texto_compra }}
+                {{ $negocio->texto_compra }}
             </p>
             <div class="column"></div>
             <form action="/cartao" method="post">
                 @csrf
+
+                <nav class="level">
+                    @foreach( $negocio->opcoes_cartoes as $key => $opcao)
+                        @if( $opcao->descricao )
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <p class="heading">€{{ $opcao->valor }} equivale a:</p>
+                            <p class="title is-size-5">{{ $opcao->descricao }}</p>
+                        </div>
+                    </div>
+                        @endif
+                    @endforeach
+                </nav>
+
                 <p class="has-text-grey">Seleciona a quantia do seu cartão:</p>
-                <div class="field">
-                    <input class="is-checkradio is-link" id="valor1" type="radio" name="valor" checked="checked">
-                    <label for="valor1">10€</label>
-                    <input class="is-checkradio is-link" id="valor2" type="radio" name="valor">
-                    <label for="valor2">20€</label>
-                    <input class="is-checkradio is-link" id="valor3" type="radio" name="valor">
-                    <label for="valor3">30€</label>
+                <div class="field" id="opcoes">
+                    @foreach( $negocio->opcoes_cartoes as $key => $opcao)
+                        <input class="is-checkradio is-link" id="opcao.{{ $key }}" type="radio" name="opcao" value="{{ $opcao->id }}" checked>
+                        <label for="opcao.{{ $key }}">€{{ $opcao->valor }}</label>
+                    @endforeach
                 </div>
                 <div class="box has-background-dark has-text-white">
                     <div class="columns has-text-left">
                         <div class="column is-10">
                             <p class="has-text-weight-bold is-paddingless is-marginless">Cartão ajuda para</p>
-                            <p class="is-paddingless is-marginless">{{ $loja->nome }}</p>
+                            <p class="is-paddingless is-marginless">{{ $negocio->nome }}</p>
+                            <p class="is-paddingless is-marginless is-size-7"></p>
                         </div>
                         <div class="column">
                             <span class="has-text-link is-size-1">
@@ -43,7 +58,7 @@
                     </div>
                     <div class="columns has-text-left">
                         <div class="column">
-                            <p class="has-text-weight-bold is-size-4">€10</p>
+                            <p class="has-text-weight-bold is-size-4" id="valor"></p>
                         </div>
                     </div>
                 </div>

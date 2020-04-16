@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class OpcoesCartoesController extends Controller
 {
+
+    public function getOpcao($id)
+    {
+        return OpcaoCartao::find($id)->first();
+    }
     /**
      * Display a listing of the resource.
      *
