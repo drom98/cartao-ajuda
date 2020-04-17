@@ -63,8 +63,10 @@ class negocioService
             $file = $request->file('logo');
             $name = time() . '_' . $file->getClientOriginalName();
 
-            $resize = Image::make($file->getRealPath())->resize('128', '128')->encode('webp');
-            $resize->save(public_path() . '/storage/logotipos' . $name);
+            $resize = Image::make($file->getRealPath())->resize('256', null, function ($constraint) {
+                $constraint->aspectRatio();
+            })->encode('webp', '75');
+            $resize->save(public_path() . '/storage/logotipos/' . $name);
 
             return $name;
         }
