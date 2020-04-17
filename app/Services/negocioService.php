@@ -33,7 +33,7 @@ class negocioService
         }
 
         return $negocio->update([
-            'nome' => $request->nome,
+            'nome' => $request->nome,'url' => $this->createUrlFromName($request->nome),
             'logo' => $logo,
             'texto_compra' => $request->texto_compra,
             'texto_agradecimento' => $request->texto_agradecimento,
@@ -74,6 +74,6 @@ class negocioService
 
     public function createUrlFromName($name)
     {
-        return strtolower(str_replace(' ', '', $name));
+        return strtolower(str_replace(' ', '-', $name));
     }
 }
