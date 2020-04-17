@@ -7,6 +7,7 @@ namespace App\Services;
 use App\Negocio;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
+use Intervention\Image\Facades\Image;
 
 class negocioService
 {
@@ -61,7 +62,10 @@ class negocioService
         if ($request->hasFile('logo')) {
             $file = $request->file('logo');
             $name = time() . '_' . $file->getClientOriginalName();
-            $file->move(public_path() . '/storage/logotipos', $name);
+
+            $resize = Image::make($file->getRealPath())->resize('128', '128')->encode('webp');
+            $resize->save(public_path() . '/storage/logotipos' . $name);
+
             return $name;
         }
     }
