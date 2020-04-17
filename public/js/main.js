@@ -7,6 +7,42 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    document.querySelectorAll('#btnVerCodigo').forEach(function (el) {
+        el.addEventListener('click', () => {
+
+            fetch('/cartao/getCodigo/' + el.name)
+                .then(function (response) {
+                    response.json().then(function (data) {
+                        document.querySelector('#codigoCartao').innerHTML = data;
+                    });
+                });
+            document.querySelector('#modalVerCodigo').classList.toggle('is-active');
+            document.querySelector('html').classList.toggle('is-clipped');
+        });
+    });
+    document.querySelectorAll('#btnAtivar').forEach(function (el) {
+        el.addEventListener('click', () => {
+
+            fetch('/cartao/ativarCartao/' + el.name)
+                .then(function (response) {
+                    response.json().then(function (data) {
+                        location.reload();
+                    });
+                });
+        });
+    });
+    document.querySelector('.modal-close').addEventListener('click', () => {
+        document.querySelector('#modalVerCodigo').classList.toggle('is-active');
+        document.querySelector('html').classList.toggle('is-clipped');
+    });
+    document.querySelector('.modal-background').addEventListener('click', () => {
+        document.querySelector('#modalVerCodigo').classList.toggle('is-active');
+        document.querySelector('html').classList.toggle('is-clipped');
+    });
+});
+
+$(function () {
+
     var opcoes = $('#opcoes').find(':input');
     var valores = $('#opcoes').find('label');
 
@@ -24,5 +60,5 @@ document.addEventListener('DOMContentLoaded', () => {
                     break;
             }
         })
-    })
+    });
 });

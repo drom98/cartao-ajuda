@@ -24,6 +24,6 @@ class OpcaoCartao extends Model
 
     public function cartoes()
     {
-        return $this->hasMany('App\Cartao');
+        return $this->hasMany('App\Cartao', 'opcao_id', 'id');
     }
 }

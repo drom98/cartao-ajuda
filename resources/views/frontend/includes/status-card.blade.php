@@ -4,7 +4,7 @@
             {{ $negocio->nome }}
         </p>
         <p class="card-subtitle has-text-weight-bold has-text-grey-dark">
-            Total angariado: 40€
+            Total angariado: €{{ $total }}
         </p>
     </div>
 </div>
@@ -15,7 +15,7 @@
             Cartões ativos
         </p>
         <p class="card-subtitle has-text-weight-bold has-text-grey-dark">
-            1
+            {{ count( $negocio->cartoes->where('estado', 1)) }}
         </p>
     </div>
 </div>
@@ -26,7 +26,7 @@
             Cartões a aguardar aprovação
         </p>
         <p class="card-subtitle has-text-weight-bold has-text-grey-dark">
-            1
+            {{ count( $negocio->cartoes->where('estado', 0)) }}
         </p>
     </div>
 </div>

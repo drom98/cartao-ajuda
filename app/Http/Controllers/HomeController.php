@@ -36,10 +36,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //dd(count(MetodoPagamento::all()));
+        $negocio = Auth::user()->negocio;
+        $total = array();
+        foreach ( $negocio->cartoes as $cartao) {
+            array_push($total, $cartao->opcao_cartao->valor);
+        }
+
         return view('frontend.home', [
             'negocio' => Auth::user()->negocio,
-            'metodos_pagamento' => MetodoPagamento::all()
+            'metodos_pagamento' => MetodoPagamento::all(),
+            'total' => array_sum($total)
         ]);
     }
 

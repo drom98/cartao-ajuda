@@ -94,4 +94,20 @@ class CartaoController extends Controller
     {
         //
     }
+
+    public function getCodigo($id)
+    {
+        return response()->json(Cartao::find($id)->codigo);
+
+    }
+
+    public function ativarCartao($id)
+    {
+        $cartao = Cartao::find($id);
+
+        $cartao->estado = 1;
+        $cartao->save();
+
+        return true;
+    }
 }

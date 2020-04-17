@@ -17,7 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('/obrigado', 'negocio.agradecimento');
+Route::get('/cartao/getCodigo/{id}', 'CartaoController@getCodigo');
+Route::get('/cartao/ativarCartao/{id}', 'CartaoController@ativarCartao');
 
 Route::get('/store/{url}', 'NegocioController@index')->name('negocio.front');
 Route::get('/store/getOpcao/{id}', 'NegocioController@getOpcao');

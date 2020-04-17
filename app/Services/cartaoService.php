@@ -22,7 +22,8 @@ class cartaoService
             'nome_cliente' => $request->nome,
             'apelido_cliente' => $request->apelido,
             'email' => $request->email,
-            'estado' => 0
+            'estado' => 0,
+            'codigo' => uniqid()
         ]);
     }
 }

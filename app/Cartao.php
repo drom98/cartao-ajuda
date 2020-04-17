@@ -15,11 +15,12 @@ class Cartao extends Model
         'apelido_cliente',
         'email',
         'estado',
+        'codigo',
     ];
 
     public function opcao_cartao()
     {
-        return $this->belongsTo('App\OpcaoCartao');
+        return $this->belongsTo('App\OpcaoCartao', 'opcao_id');
     }
 
     public function negocio()

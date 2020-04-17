@@ -21,6 +21,7 @@
 
         <div class="columns">
             <div class="column is-three-quarters">
+                @include('frontend.includes.code-modal')
                 @include('frontend.includes.table')
             </div>
             <div class="column">
