@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Loja;
 use App\Providers\RouteServiceProvider;
 use App\Services\lojaService;
+use App\Services\metodoPagamentoService;
 use App\Services\negocioService;
 use App\Services\opcaoCartaoService;
 use App\User;
@@ -28,6 +29,7 @@ class RegisterController extends Controller
 
     private $negocioService;
     private $opcaoCartaoService;
+    private $metodoPagamentoService;
 
     use RegistersUsers;
 
@@ -44,11 +46,12 @@ class RegisterController extends Controller
      * @param negocioService $negocioService
      * @param opcaoCartaoService $opcaoCartaoService
      */
-    public function __construct(negocioService $negocioService, opcaoCartaoService $opcaoCartaoService)
+    public function __construct(negocioService $negocioService, opcaoCartaoService $opcaoCartaoService, metodoPagamentoService $metodoPagamentoService)
     {
         $this->middleware('guest');
         $this->negocioService = $negocioService;
         $this->opcaoCartaoService = $opcaoCartaoService;
+        $this->metodoPagamentoService = $metodoPagamentoService;
     }
 
     /**
@@ -83,6 +86,7 @@ class RegisterController extends Controller
 
         $this->negocioService->create($data, $user);
         $this->opcaoCartaoService->create($user);
+        $this->metodoPagamentoService->create($user);
 
         return $user;
     }

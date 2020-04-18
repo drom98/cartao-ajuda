@@ -7,7 +7,7 @@
             <div class="columns is-centered">
                 <div class="column">
                     <figure class="image is-128x128" style="margin: 0 auto;">
-                        <img src="{{ asset('logotipos_lojas/'. $negocio->logo ) }}" class="is-vcentered">
+                        <img src="{{ asset('storage/logotipos/'. $negocio->logo ) }}" class="is-vcentered">
                     </figure>
                 </div>
             </div>

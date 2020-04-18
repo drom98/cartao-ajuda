@@ -8,7 +8,7 @@
                     <div class="column is-4">
                         <div class="card">
                             <div class="card-content">
-                                <h2 class="subtitle is-6 has-text-centered">Venda HelpCards aos seus clientes e ajude o seu negócio! 🙏️👋️</h2>
+                                <h2 class="subtitle is-6 has-text-centered">Ajude o seu negocio a superar esta crise, é simples e rápido! 🙏️👋️</h2>
                                 <h1 class="title has-text-link is-4 has-text-centered">Criar nova conta</h1>
                                 @if ($errors->any())
                                     <div class="notification is-danger is-light" style="background-color: #feecf0; color: #cc0f35;">

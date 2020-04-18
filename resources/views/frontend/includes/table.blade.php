@@ -12,7 +12,7 @@
         </thead>
         <tbody>
             @foreach( $negocio->cartoes as $cartao)
-                <tr>
+                <tr style="{{ ($cartao->estado) == 1 ? 'background-color: #edfff3' : ''}}">
                     <td>{{ $cartao->nome_cliente . ' ' . $cartao->apelido_cliente }}</td>
                     <td>{{ $cartao->email }}</td>
                     <td>€{{ $cartao->opcao_cartao->valor }}</td>
@@ -20,10 +20,11 @@
                     <td>{{ $cartao->created_at->addYears(1)->format('d M Y') }}</td>
                     <td>
                         @if( $cartao->estado == 0)
-                        <button class="button is-success is-light is-small is-rounded" id="btnAtivar" name="{{ $cartao->id }}">Ativar</button>
-                        <button class="button is-link is-light is-small is-rounded" id="btnVerCodigo" name="{{ $cartao->id }}">Ver código</button>
+                        <button class="button is-dark is-small is-rounded" id="btnVerCodigo" name="{{ $cartao->id }}">Ver código</button>
+                        <button class="button is-link is-small is-rounded" id="btnAtivar" name="{{ $cartao->id }}">Ativar</button>
                         @else
-                        <p class="button is-success is-light is-small is-rounded" style="cursor: default;">Ativado</p>
+                        <button class="button is-dark is-small is-rounded" id="btnVerCodigo" name="{{ $cartao->id }}">Ver código</button>
+                        <p class="button is-success is-small is-rounded" style="cursor: default;">Ativado</p>
                         @endif
                     </td>
                 </tr>

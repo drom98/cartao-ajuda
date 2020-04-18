@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Loja;
 use App\MetodoPagamento;
 use App\Services\lojaService;
+use App\Services\metodoPagamentoService;
 use App\Services\negocioService;
 use App\Services\opcaoCartaoService;
 use Illuminate\Http\Request;
@@ -15,6 +16,7 @@ class HomeController extends Controller
 
     private $negocioService;
     private $opcaoCartaoService;
+    private $metodoPagamentoService;
 
     /**
      * Create a new controller instance.
@@ -22,11 +24,12 @@ class HomeController extends Controller
      * @param negocioService $negocioService
      * @param opcaoCartaoService $opcaoCartaoService
      */
-    public function __construct(negocioService $negocioService, opcaoCartaoService $opcaoCartaoService)
+    public function __construct(negocioService $negocioService, opcaoCartaoService $opcaoCartaoService, metodoPagamentoService $metodoPagamentoService)
     {
         $this->middleware('auth');
         $this->negocioService = $negocioService;
         $this->opcaoCartaoService = $opcaoCartaoService;
+        $this->metodoPagamentoService = $metodoPagamentoService;
     }
 
     /**
@@ -44,7 +47,6 @@ class HomeController extends Controller
 
         return view('frontend.home', [
             'negocio' => Auth::user()->negocio,
-            'metodos_pagamento' => MetodoPagamento::all(),
             'total' => array_sum($total)
         ]);
     }
@@ -61,7 +63,8 @@ class HomeController extends Controller
     {
         $this->negocioService->update($request);
         $this->opcaoCartaoService->update($request);
+        $this->metodoPagamentoService->update($request);
 
-        return redirect(route('home'))->with('message', 'Loja configurada com sucesso.');
+        return redirect(route('home'))->with('estado', 'Boa! Os dados foram atualizados com sucesso.');
     }
 }

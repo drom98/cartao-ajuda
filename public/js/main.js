@@ -34,10 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.modal-close').addEventListener('click', () => {
         document.querySelector('#modalVerCodigo').classList.toggle('is-active');
         document.querySelector('html').classList.toggle('is-clipped');
+        document.querySelector('#codigoCartao').innerHTML = '<i class="fa-spin fas fa-spinner"></i>';
     });
     document.querySelector('.modal-background').addEventListener('click', () => {
         document.querySelector('#modalVerCodigo').classList.toggle('is-active');
         document.querySelector('html').classList.toggle('is-clipped');
+        document.querySelector('#codigoCartao').innerHTML = '<i class="fa-spin fas fa-spinner"></i>';
     });
 });
 

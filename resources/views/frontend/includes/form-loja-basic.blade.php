@@ -56,19 +56,19 @@
                         </a>
                     </p>
                     <p class="control is-expanded">
-                        <input name="iban" class="input" type="text" placeholder="Insira o seu IBAN..." value="{{ $negocio->iban }}">
+                        <input name="metodo[]" class="input" type="text" placeholder="Insira o seu IBAN..." value="{{ $negocio->metodos_pagamento[0]->descricao }}">
                     </p>
                 </div>
                 <div class="field">
                     <label class="label">MB WAY</label>
                     <div class="control">
-                        <input name="mb_way" class="input" type="tel" placeholder="Insira o seu número de telemóvel associado ao MB WAY" value="{{ $negocio->mb_way }}">
+                        <input name="metodo[]" class="input" type="tel" placeholder="Insira o seu número de telemóvel associado ao MB WAY" value="{{ $negocio->metodos_pagamento[1]->descricao }}">
                     </div>
                 </div>
                 <div class="field">
                     <label class="label">PayPal</label>
                     <div class="control">
-                        <input name="paypal" class="input" type="email" placeholder="Insira o seu email do PayPal" value="{{ $negocio->paypal }}">
+                        <input name="metodo[]" class="input" type="email" placeholder="Insira o seu email do PayPal" value="{{ $negocio->metodos_pagamento[2]->descricao }}">
                     </div>
                 </div>
                 <p class="help">Os métodos de pagamento que inserir aqui serão enviados no email que o cliente irá receber assim que comprar um cartão.</p>

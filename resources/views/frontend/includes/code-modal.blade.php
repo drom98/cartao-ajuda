@@ -5,10 +5,16 @@
             <div class="level-item has-text-centered">
                 <div>
                     <p class="heading">Código:</p>
-                    <p class="title" id="codigoCartao">A carregar...</p>
+                    <p class="title" id="codigoCartao"><i class="fa-spin fas fa-spinner"></i></p>
                 </div>
             </div>
         </nav>
     </div>
     <button class="modal-close is-large" aria-label="close"></button>
 </div>
+
+<style>
+    .fa-spin {
+        animation: fa-spin 2s linear infinite;
+    }
+</style>

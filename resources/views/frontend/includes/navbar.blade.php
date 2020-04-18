@@ -39,7 +39,7 @@
                         <a class="button is-link is-light is-small" href="{{ route('negocio.front', $negocio->url) }}" target="_blank">
                             <strong>
                                 <i class="fas fa-external-link-alt"></i>
-                                Abrir loja
+                                Abrir página
                             </strong>
                         </a>
                     </div>
