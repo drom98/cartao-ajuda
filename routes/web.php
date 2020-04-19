@@ -13,8 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'LandingController@index');
+
+Route::get('mail', function () {
+    $cartao = App\Cartao::find(3);
+
+    return new App\Mail\CartaoComprado($cartao);
 });
 
 Route::get('/store/{url}', 'NegocioController@index')->name('negocio.front');
