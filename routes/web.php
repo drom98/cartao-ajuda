@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/cache', function() {
+    Artisan::call('config:cache');
+    return "Cached";
+});
+
 Route::get('/', 'LandingController@index');
 
 Route::get('mail', function () {

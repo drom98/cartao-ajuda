@@ -78,12 +78,6 @@
                     </div>
                 </div>
                 <div class="field">
-                    <label class="label has-text-grey has-text-left">Apelido:</label>
-                    <div class="control">
-                        <input name="apelido" class="input" type="text" placeholder="Insira o seu apelido">
-                    </div>
-                </div>
-                <div class="field">
                     <label class="label has-text-grey has-text-left">Email:</label>
                     <div class="control">
                         <input name="email" class="input" type="email" placeholder="Insira o seu email">
@@ -104,10 +98,8 @@
         <footer class="has-background-light">
             <div class="column"></div>
             <p class="has-text-weight-bold" style="display: inline-block;">
-                Página criada através da aplicação <a href="#"> Cartão Ajuda</a>.
-            </p>
-            <p class="has-text-grey is-size-7" style="display: inline-block;">
-                Comece a vender cartões para a sua loja, é totalmente grátis e simples!
+                Página criada através da aplicação <a href="/"> Cartão Ajuda</a>. <br>
+                <span class="has-text-grey has-text-weight-normal is-size-7">Tem um negócio que necessita de ajuda? Registe-se, é simples e não demora mais que 1 minuto!</span>
             </p>
         </footer>
     </div>

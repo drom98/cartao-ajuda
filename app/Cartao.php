@@ -12,7 +12,6 @@ class Cartao extends Model
         'opcao_id',
         'negocio_id',
         'nome_cliente',
-        'apelido_cliente',
         'email',
         'estado',
         'codigo',

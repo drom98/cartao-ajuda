@@ -18,7 +18,7 @@
                 <br>
                 <div class="columns is-centered">
                     <div class="column is-4-desktop">
-                        <div class="buttons has-addons is-centered">
+                        <div class="buttons is-centered">
                             <a href="{{ route('register') }}" class="button is-light is-rounded">Registo</a>
                             <a href="{{ route('login') }}" class="button is-light is-rounded is-outlined">Iniciar sessão</a>
                         </div>
