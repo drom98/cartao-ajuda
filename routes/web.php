@@ -18,7 +18,7 @@ Route::get('/cache', function() {
     return "Cached";
 });
 
-Route::get('/', 'LandingController@index');
+Route::get('/', 'LandingController@index')->name('landing');
 
 Route::get('mail', function () {
     $cartao = App\Cartao::find(3);

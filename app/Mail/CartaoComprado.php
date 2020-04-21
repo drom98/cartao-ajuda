@@ -13,10 +13,11 @@ class CartaoComprado extends Mailable
     use Queueable, SerializesModels;
 
     public $cartao;
+
     /**
      * Create a new message instance.
      *
-     * @return void
+     * @param Cartao $cartao
      */
     public function __construct(Cartao $cartao)
     {
@@ -30,7 +31,8 @@ class CartaoComprado extends Mailable
      */
     public function build()
     {
-        return $this->from('info@cartaoajuda.com')->subject('Obrigado por adquirir um cartão!')
-            ->view('emails.cartaoComprado');
+        return $this->from('info@cartaoajuda.pt')
+            ->subject('Obrigado por adquirir um cartão!')
+            ->markdown('emails.cartaoComprado');
     }
 }
