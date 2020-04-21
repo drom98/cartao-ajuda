@@ -21,9 +21,9 @@ Route::get('/cache', function() {
 Route::get('/', 'LandingController@index')->name('landing');
 
 Route::get('mail', function () {
-    $cartao = App\Cartao::find(3);
+    $cartao = App\Cartao::find(6);
 
-    return new App\Mail\CartaoComprado($cartao);
+    return new App\Mail\CartaoAtivado($cartao);
 });
 
 Route::get('/help', 'HomeController@help')->name('help');

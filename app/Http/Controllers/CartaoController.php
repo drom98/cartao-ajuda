@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Cartao;
+use App\Mail\CartaoAtivado;
 use App\Negocio;
 use App\Services\cartaoService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class CartaoController extends Controller
 {
@@ -108,6 +110,13 @@ class CartaoController extends Controller
         $cartao->estado = 1;
         $cartao->save();
 
+        $this->sendEmail($cartao->email, $cartao);
+
         return true;
+    }
+
+    public function sendEmail($email, $cartao)
+    {
+        Mail::to($email)->send(new CartaoAtivado($cartao));
     }
 }
