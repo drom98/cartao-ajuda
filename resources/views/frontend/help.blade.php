@@ -27,6 +27,7 @@
                 <div class="box">
                     <h1 class="title is-size-4">3. Partilhe a sua página com os seus clientes e amigos.</h1>
                     <p class="subtitle is-size-6">A melhor forma de dar a conhecer a sua página é partilhando-a com todos os seus clientes, amigos e familiares.</p>
+                    <iframe src="https://www.facebook.com/plugins/share_button.php?href=https://cartaoajuda.pt/store/{{ $negocio->url }}&layout=button&size=large&width=77&height=28&appId" width="100%" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
                 </div>
             </div>
             <div class="column">
