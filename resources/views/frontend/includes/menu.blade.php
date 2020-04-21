@@ -13,7 +13,7 @@
             </a>
         </li>
         <li class="{{ (request()->is('instrucoes*')) ? 'is-active' : ''}}">
-            <a href="#">
+            <a href="{{ route('help') }}">
                 <span class="icon is-small"><i class="fas fa-question-circle"></i></span>
                 <span>Instruções</span>
             </a>

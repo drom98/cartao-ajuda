@@ -26,6 +26,8 @@ Route::get('mail', function () {
     return new App\Mail\CartaoComprado($cartao);
 });
 
+Route::get('/help', 'HomeController@help')->name('help');
+
 Route::get('/store/{url}', 'NegocioController@index')->name('negocio.front');
 Route::get('/store/getOpcao/{id}', 'NegocioController@getOpcao');
 Route::post('/cartao', 'CartaoController@store');

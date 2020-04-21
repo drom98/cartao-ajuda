@@ -11,9 +11,9 @@
                 <div class="field">
                     <label class="label">Nome</label>
                     <div class="control">
-                        <input name="nome" class="input" type="text" placeholder="Nome da loja" value="{{ $negocio->nome }}">
+                        <input name="nome" class="input" type="text" placeholder="Nome do seu negócio" value="{{ $negocio->nome }}">
                     </div>
-                    <p class="help">O nome da sua loja irá aparecer na página de compra do cartão.</p>
+                    <p class="help">O nome do seu negócio irá aparecer na página de compra do cartão.</p>
                 </div>
 
                 <div class="field">

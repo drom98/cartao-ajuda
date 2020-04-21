@@ -1,7 +1,7 @@
 <nav class="navbar is-transparent is-fixed-top" role="navigation" aria-label="main navigation">
     <div class="container">
         <div class="navbar-brand">
-            <a class="navbar-item" href="https://bulma.io">
+            <a class="navbar-item" href="#">
               <h1 class="has-text-weight-bold is-link">Cartão Ajuda</h1>
             </a>
 

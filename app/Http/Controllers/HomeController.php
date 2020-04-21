@@ -67,4 +67,11 @@ class HomeController extends Controller
 
         return redirect(route('home'))->with('estado', 'Boa! Os dados foram atualizados com sucesso.');
     }
+
+    public function help()
+    {
+        return view('frontend.help', [
+            'negocio' => Auth::user()->negocio
+        ]);
+    }
 }
