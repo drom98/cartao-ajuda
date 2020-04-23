@@ -22,9 +22,9 @@ class negocioService
 
     public function update($request)
     {
-        $this->validarDados($request);
-
         $negocio = Auth::user()->negocio;
+
+        $this->validarDados($request, $negocio);
 
         if($request->hasFile('logo')) {
             $logo = $this->storeLogo($request);
@@ -40,12 +40,12 @@ class negocioService
         ]);
     }
 
-    private function validarDados($request)
+    private function validarDados($request, $negocio)
     {
         return $request->validate([
             'nome' => [
                 'required',
-                Rule::unique('users', 'name')->ignore('user'),
+                Rule::unique('negocios', 'nome')->ignore($negocio->id),
                 'max: 80'
             ],
             'logo' => 'nullable|file|image',

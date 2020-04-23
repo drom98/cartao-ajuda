@@ -22,7 +22,7 @@
         <div class="columns">
             <div class="column is-three-quarters">
                 @include('frontend.includes.code-modal')
-                @if( count($negocio->cartoes) < 0)
+                @if( count($negocio->cartoes) == 0)
                     <h3 class="title is-3">Ainda não vendeu nenhum cartão.</h3>
                     <p class="subtitle is-5">Copie a ligação da sua página e partilhe a ligação com os seus clientes!</p>
                     <input class="input is-small" type="text" value="{{ url('store/' . $negocio->url ) }}" readonly>

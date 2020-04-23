@@ -23,11 +23,11 @@
                                 <form method="POST" action="{{ route('register') }}">
                                     @csrf
                                     <div class="field">
-                                        <label class="label">Nome:</label>
+                                        <label class="label">Nome do seu negócio:</label>
                                         <div class="control has-icons-left">
-                                            <input name="name" type="text" class="input @error('name') is-invalid @enderror" placeholder="Insira o seu primeiro e último nome..." value="{{ old('name') }}" required>
+                                            <input name="nome" type="text" class="input @error('nome') is-invalid @enderror" placeholder="Insira o nome do seu negócio..." value="{{ old('nome') }}" required>
                                             <span class="icon is-small is-left">
-                                                <i class="fas fa-user"></i>
+                                                <i class="fas fa-briefcase"></i>
                                             </span>
                                         </div>
                                         <p id="nome" class="help is-danger is-hidden">O nome que introduziu não existe.</p>
@@ -38,16 +38,6 @@
                                             <input name="email" type="email" class="input @error('email') is-invalid @enderror" placeholder="Insira o seu email..." value="{{ old('email') }}" required>
                                             <span class="icon is-small is-left">
                                                 <i class="fas fa-envelope"></i>
-                                            </span>
-                                        </div>
-                                        <p id="nome" class="help is-danger is-hidden">O nome que introduziu não existe.</p>
-                                    </div>
-                                    <div class="field">
-                                        <label class="label">Nome do seu negócio:</label>
-                                        <div class="control has-icons-left">
-                                            <input name="nome" type="text" class="input @error('nome') is-invalid @enderror" placeholder="Insira o nome do seu negócio..." value="{{ old('nome') }}" required>
-                                            <span class="icon is-small is-left">
-                                                <i class="fas fa-briefcase"></i>
                                             </span>
                                         </div>
                                         <p id="nome" class="help is-danger is-hidden">O nome que introduziu não existe.</p>

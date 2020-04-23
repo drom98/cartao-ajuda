@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    @include('landing.includes.seo')
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -18,6 +20,7 @@
 
     <script src="https://kit.fontawesome.com/92f1af5f84.js" crossorigin="anonymous"></script>
 
+    <script src="{{ asset('js/matomo.js') }}"></script>
 </head>
 <body class="has-navbar-fixed-top">
     @include('frontend.includes.navbar')

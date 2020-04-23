@@ -12,7 +12,7 @@
                 <span>Configurar página</span>
             </a>
         </li>
-        <li class="{{ (request()->is('instrucoes*')) ? 'is-active' : ''}}">
+        <li class="{{ (request()->is('help*')) ? 'is-active' : ''}}">
             <a href="{{ route('help') }}">
                 <span class="icon is-small"><i class="fas fa-question-circle"></i></span>
                 <span>Instruções</span>

@@ -38,28 +38,27 @@
                             </strong>
                         </a>
                     </div>
-                @endisset
-
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link">
-                        {{ Auth::user()->name }}
-                    </a>
-
-                    <div class="navbar-dropdown">
-                        <a
-                            class="navbar-item"
-                            href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();
-                            ">
-                            <i class="fas fa-sign-out-alt"></i>
-                            Sair
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">
+                            {{ $negocio->nome }}
                         </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
+
+                        <div class="navbar-dropdown">
+                            <a
+                                class="navbar-item"
+                                href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();
+                        ">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Sair
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
                     </div>
-                </div>
+                @endisset
             </div>
         </div>
     </div>

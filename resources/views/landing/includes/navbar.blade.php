@@ -13,8 +13,17 @@
         </div>
 
         <div class="navbar-menu" id="navMenu">
+            <div class="navbar-start">
+                <a href="https://www.facebook.com/cartaoAjuda/" target="_blank" class="navbar-item">
+                    <i class="fab fa-facebook-square"></i>
+                </a>
+                <a href="https://m.me/cartaoAjuda" target="_blank" class="navbar-item">
+                    <i class="fab fa-facebook-messenger"></i>
+                </a>
+            </div>
             <div class="navbar-end">
                 <a class="navbar-item" href="#funcionamento">Funcionamento</a>
+                <a class="navbar-item" href="https://cartaoajuda.pt/store/cart%C3%A3o-ajuda" target="_blank">Exemplo</a>
                 <div class="navbar-item">
                     <div class="field is-grouped">
                         <p class="control">

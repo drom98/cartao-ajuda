@@ -31,7 +31,7 @@ class CartaoComprado extends Mailable
      */
     public function build()
     {
-        return $this->from('info@cartaoajuda.pt')
+        return $this->from('info@cartaoajuda.pt', $this->cartao->negocio->nome)
             ->subject('Obrigado por adquirir um cartão!')
             ->markdown('emails.cartaoComprado');
     }

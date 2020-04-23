@@ -55,6 +55,7 @@
                         As transações são apenas entre si e os seus clientes. Não passam pela aplicação nem por nenhuma outra entidade, garantindo assim que recebe a totalidade do dinheiro.
                     </p>
                     <a href="{{ route('register') }}" class="button is-link is-rounded">Registo</a>
+                    <a href="https://cartaoajuda.pt/store/cart%C3%A3o-ajuda" target="_blank" class="button is-link is-rounded is-outlined">Ver página de exemplo</a>
                 </div>
                 <div class="column is-hidden-mobile">
                     <div class="box">
@@ -100,6 +101,58 @@
                         <figure class="image is-16by9">
                             <img src="{{ asset('img/landing/cartoes.svg') }}">
                         </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero has-text-centered is-medium" id="funcionamento">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title has-text-dark is-size-4-mobile">A quem se destina?</h1>
+                <p class="subtitle has-text-grey is-size-6-mobile">Qualquer estabelicimento pode aderir!</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <div class="box">
+                        <figure class="image is-5by4">
+                            <img src="{{ asset('img/landing/hair.svg') }}">
+                        </figure>
+                        <br>
+                        <h1 class="title has-text-centered is-size-5">Cabeleireiros/Barbeiros</h1>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="box">
+                        <figure class="image is-5by4">
+                            <img src="{{ asset('img/landing/food.svg') }}">
+                        </figure>
+                        <br>
+                        <h1 class="title has-text-centered is-size-5">Restaurantes</h1>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="box">
+                        <figure class="image is-5by4">
+                            <img src="{{ asset('img/landing/bar.svg') }}">
+                        </figure>
+                        <br>
+                        <h1 class="title has-text-centered is-size-5">Bares</h1>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="box">
+                        <figure class="image is-5by4">
+                            <img src="{{ asset('img/landing/shop.svg') }}">
+                        </figure>
+                        <br>
+                        <h1 class="title has-text-centered is-size-5">Lojas locais</h1>
                     </div>
                 </div>
             </div>
