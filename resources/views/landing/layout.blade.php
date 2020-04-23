@@ -15,6 +15,7 @@
 
         <!-- Styles -->
         <link href="{{ asset('css/bulma.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/bulma-steps.min.css') }}" rel="stylesheet">
 
         <script src="https://kit.fontawesome.com/92f1af5f84.js" crossorigin="anonymous"></script>
 

@@ -14,23 +14,23 @@
 
         <div class="navbar-menu" id="navMenu">
             <div class="navbar-start">
-                <a href="https://www.facebook.com/cartaoAjuda/" target="_blank" class="navbar-item">
+                <a href="https://www.facebook.com/cartaoajuda.pt/" target="_blank" class="navbar-item">
                     <i class="fab fa-facebook-square"></i>
                 </a>
-                <a href="https://m.me/cartaoAjuda" target="_blank" class="navbar-item">
+                <a href="https://m.me/cartaoajuda.pt" target="_blank" class="navbar-item">
                     <i class="fab fa-facebook-messenger"></i>
                 </a>
             </div>
             <div class="navbar-end">
                 <a class="navbar-item" href="#funcionamento">Funcionamento</a>
-                <a class="navbar-item" href="https://cartaoajuda.pt/store/cart%C3%A3o-ajuda" target="_blank">Exemplo</a>
+                <a class="navbar-item" href="https://cartaoajuda.pt/store/cart%C3%A3o-ajuda" target="_blank">Página de exemplo</a>
                 <div class="navbar-item">
                     <div class="field is-grouped">
                         <p class="control">
                             <a href="{{ route('login') }}" class="button is-rounded is-small">Iniciar sessão</a>
                         </p>
                         <p class="control">
-                            <a href="{{ route('register') }}" class="button is-link is-light is-rounded is-small">Registar negócio</a>
+                            <a href="{{ route('register') }}" class="button is-link is-light is-rounded is-small">Criar página</a>
                         </p>
                     </div>
                 </div>
