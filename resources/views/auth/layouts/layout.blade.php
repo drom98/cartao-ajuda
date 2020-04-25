@@ -16,7 +16,7 @@
     <link href="{{ asset('css/bulma.css') }}" rel="stylesheet">
 
     <script src="https://kit.fontawesome.com/92f1af5f84.js" crossorigin="anonymous"></script>
-
+    <script src="{{ asset('js/matomo.js') }}"></script>
 </head>
 <body class="has-background-light">
 

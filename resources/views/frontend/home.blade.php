@@ -24,10 +24,15 @@
                 @include('frontend.includes.code-modal')
                 @if( count($negocio->cartoes) == 0)
                     <h3 class="title is-3">Ainda não vendeu nenhum cartão.</h3>
-                    <p class="subtitle is-5">Copie a ligação da sua página e partilhe a ligação com os seus clientes!</p>
+                    <p class="subtitle is-5">Copie a ligação da sua página e partilhe-a com os seus clientes e amigos!</p>
                     <input class="input is-small" type="text" value="{{ url('store/' . $negocio->url ) }}" readonly>
-                    <br><br><p class="subtitle is-5 has-text-grey is-marginless">Partilhar diretamente no Facebook:</p>
-                    <iframe src="https://www.facebook.com/plugins/share_button.php?href=https://cartaoajuda.pt/store/{{ $negocio->url }}&layout=button&size=large&width=77&height=28&appId" width="100%" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                    <br><br><p class="subtitle is-5 has-text-grey is-marginless">Partilhar a sua página diretamente no Facebook:</p>
+                    <a class="button is-link is-small" href="https://www.facebook.com/sharer/sharer.php?u={{ url('/store',$negocio->url) }}&display=popup&ref=plugin&src=share_button" onclick="return !window.open(this.href, 'Facebook')">
+                        <span class="icon">
+                            <i class="fab fa-facebook"></i>
+                          </span>
+                          <span>Partilhar no Facebook</span>
+                    </a>
                 @else
                     @include('frontend.includes.table')
                 @endif

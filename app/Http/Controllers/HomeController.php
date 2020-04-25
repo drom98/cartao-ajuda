@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Loja;
 use App\MetodoPagamento;
+use App\Negocio;
 use App\Services\lojaService;
 use App\Services\metodoPagamentoService;
 use App\Services\negocioService;

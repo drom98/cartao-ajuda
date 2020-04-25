@@ -26,7 +26,7 @@
                     <div class="column is-4-desktop">
                         <div class="buttons is-centered">
                             <a href="{{ route('register') }}" class="button is-light is-rounded">Criar página</a>
-                            <a href="{{ url('store/cartão-ajuda') }}" target="_blank" class="button is-light is-rounded is-outlined">Ver exemplo</a>
+                            <a href="{{ route('exemplo') }}" target="_blank" class="button is-light is-rounded is-outlined">Ver exemplo</a>
                         </div>
                     </div>
                 </div>
@@ -60,35 +60,35 @@
                             <span class="steps-marker is-link">1</span>
                             <div class="steps-content">
                                 <p class="is-size-4">Criar página</p>
-                                <p>Crie a sua página e configure-a como quiser.</p>
+                                <p class="has-text-grey">Crie a sua página e configure-a como quiser.</p>
                             </div>
                         </li>
                         <li class="steps-segment">
                             <span class="steps-marker is-link">2</span>
                             <div class="steps-content">
                                 <p class="is-size-4">Cliente adquire cartão</p>
-                                <p>O cliente adquire um cartão através da sua página.</p>
+                                <p class="has-text-grey">O cliente adquire um cartão através da sua página.</p>
                             </div>
                         </li>
                         <li class="steps-segment">
                             <span class="steps-marker is-link">3</span>
                             <div class="steps-content">
-                                <p class="is-size-4">Cliente efetua pagamento</p>
-                                <p>O cliente transfere o montante do cartão diretamente para si.</p>
+                                <p class="is-size-4">Recebe o pagamento</p>
+                                <p class="has-text-grey">O cliente transfere o montante diretamente para si.</p>
                             </div>
                         </li>
                         <li class="steps-segment">
                             <span class="steps-marker is-link">4</span>
                             <div class="steps-content">
                                 <p class="is-size-4">Ativar cartão</p>
-                                <p>Assim que confirmar o pagamento, ative o cartão.</p>
+                                <p class="has-text-grey">Assim que confirmar o pagamento, entre na plataforma e ative o cartão.</p>
                             </div>
                         </li>
                         <li class="steps-segment">
                             <span class="steps-marker is-link">5</span>
                             <div class="steps-content">
-                                <p class="is-size-4">Cliente recebe voucher no email</p>
-                                <p>O cliente recebe o voucher no email com o respetivo código único.</p>
+                                <p class="is-size-4">Cliente recebe voucher</p>
+                                <p class="has-text-grey">O cliente recebe o voucher no email com o respetivo código único de identificação.</p>
                             </div>
                         </li>
                     </ul>
@@ -107,7 +107,7 @@
                     <h1 class="title is-size-4-mobile">Crie a sua página.</h1>
                     <p class="subtitle has-text-grey is-size-6-mobile">
                         Crie a sua página, é simples, rápido e totalmente gratuito. <br>
-                        As transações são apenas entre si e os seus clientes. Não passam pela aplicação nem por nenhuma outra entidade, garantindo assim que recebe a totalidade do dinheiro.
+                        Para cada página é gerada uma ligação única com base no nome que definir. Partilhe a ligação com os seus clientes.
                     </p>
                     <a href="{{ route('register') }}" class="button is-link is-rounded is-outlined">Criar página</a>
                 </div>
@@ -126,18 +126,17 @@
                 <div class="column is-hidden-mobile">
                     <div class="box">
                         <figure class="image is-16by9">
-                            <img src="{{ asset('img/landing/configurar.svg') }}">
+                            <img src="{{ asset('img/landing/dashboard.svg') }}">
                         </figure>
                     </div>
                 </div>
                 <div class="column">
-                    <h1 class="title is-size-4-mobile">Configure a sua página.</h1>
+                    <h1 class="title is-size-4-mobile">Entre na plataforma.</h1>
                     <p class="subtitle has-text-grey is-size-6-mobile">
-                        Escolha o seu logotipo. <br>
-                        Defina os seus métodos de pagamento aceites. <br>
-                        Escreva um texto personalizado aos seus clientes. <br>
+                        Faça a gestão dos cartões vendidos. <br>
+                        Veja quanto já acumulou com a sua página. <br>
                     </p>
-                    <a href="https://cartaoajuda.pt/store/cart%C3%A3o-ajuda" target="_blank" class="button is-link is-rounded is-outlined">Ver página de exemplo</a>
+                    <a href="{{ route('login') }}" target="_blank" class="button is-link is-rounded is-outlined">Iniciar sessão</a>
                 </div>
             </div>
             <br>
@@ -145,16 +144,19 @@
             <br>
             <div class="columns is-variable is-8 is-vcentered">
                 <div class="column">
-                    <h1 class="title is-size-4-mobile">Defina a quantia dos seus cartões.</h1>
+                    <h1 class="title is-size-4-mobile">Configure a sua página.</h1>
                     <p class="subtitle has-text-grey is-size-6-mobile">
-                        Escolha a quantia que pretende para cada uma das três opções. <br>
-                        Se pretender pode também escolher a finalidade de cada cartão. <br>
+                        Escolha o seu logotipo. <br>
+                        Defina a quantia dos seus cartões. <br>
+                        Defina como pretende receber o dinheiro. <br>
+                        Escreva um texto personalizado aos seus clientes. <br>
                     </p>
+                    <a href="{{ route('exemplo') }}" target="_blank" class="button is-link is-rounded is-outlined">Ver página de exemplo</a>
                 </div>
                 <div class="column is-hidden-mobile">
                     <div class="box">
                         <figure class="image is-16by9">
-                            <img src="{{ asset('img/landing/cartoes.svg') }}">
+                            <img src="{{ asset('img/landing/configurar.svg') }}">
                         </figure>
                     </div>
                 </div>
@@ -162,11 +164,11 @@
         </div>
     </section>
 
-    <section class="hero has-text-centered is-medium" id="funcionamento">
+    <section class="hero has-text-centered is-medium">
         <div class="hero-body">
             <div class="container">
-                <h1 class="title has-text-dark is-size-4-mobile">A quem se destina?</h1>
-                <p class="subtitle has-text-grey is-size-6-mobile">Qualquer estabelecimento pode aderir!</p>
+                <h1 class="title has-text-dark is-size-4-mobile">Quem pode aderir?</h1>
+                <p class="subtitle has-text-grey is-size-6-mobile">Qualquer pessoa pode criar uma página!</p>
             </div>
         </div>
     </section>
@@ -214,15 +216,26 @@
         </div>
     </section>
 
-    <section class="hero has-text-centered is-medium is-light is-bold">
+    <section class="hero has-text-centered is-medium" id="estabelecimentos">
         <div class="hero-body">
             <div class="container">
-                <h1 class="title has-text-dark is-size-4-mobile">E depois?</h1>
-                <p class="subtitle has-text-grey is-size-6-mobile">Partilhe a sua página com os seus clientes!</p>
-                <a href="{{ route('register') }}" class="button is-link is-rounded">Registo</a>
+                <h1 class="title has-text-dark is-size-4-mobile">Estabelecimentos aderentes</h1>
+                <p class="subtitle has-text-grey is-size-6-mobile">Junte-se aos estabelecimentos que já aderiram!</p>
             </div>
         </div>
     </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column has-text-centered">
+                    <p class="title">Seja dos primeiros a aderir!</p>
+                    <a href="{{ route('register') }}" target="_blank" class="button is-link is-rounded">Criar página</a>
+                </div>
+            </div>
+        </div>
+    </section><br>
+    <div style="height: 120px;"></div>
 
     @include('frontend.includes.footer')
 @endsection

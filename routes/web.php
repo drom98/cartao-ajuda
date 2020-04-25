@@ -28,6 +28,8 @@ Route::get('mail', function () {
 
 Route::get('/help', 'HomeController@help')->name('help');
 
+Route::get('/store/exemplo', 'LandingController@paginaExemplo')->name('exemplo');
+
 Route::get('/store/{url}', 'NegocioController@index')->name('negocio.front');
 Route::get('/store/getOpcao/{id}', 'NegocioController@getOpcao');
 Route::post('/cartao', 'CartaoController@store');

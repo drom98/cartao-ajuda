@@ -99,7 +99,7 @@
             <div class="column"></div>
             <p class="has-text-weight-bold" style="display: inline-block;">
                 Página criada através da aplicação <a href="/"> Cartão Ajuda</a>. <br>
-                <span class="has-text-grey has-text-weight-normal is-size-7">Tem um negócio que necessita de ajuda? Registe-se, é simples e não demora mais que 1 minuto!</span>
+                <span class="has-text-grey has-text-weight-normal is-size-7" style="padding: 7px;">Cartão Ajuda - A aplicação desenvolvida para ajudar estabelecimentos afetados pela COVID-19.</span>
             </p>
         </footer>
     </div>

@@ -4,6 +4,15 @@
             <a class="navbar-item" href="#">
               <h1 class="has-text-weight-bold is-link">Cartão Ajuda</h1>
             </a>
+            <a href="https://www.facebook.com/cartaoajuda.pt/" target="_blank" class="navbar-item">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/cartaoajuda.pt/" target="_blank" class="navbar-item">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://m.me/cartaoajuda.pt" target="_blank" class="navbar-item">
+                <i class="fab fa-facebook-messenger"></i>
+            </a>
 
             <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
               <span aria-hidden="true"></span>
@@ -14,16 +23,12 @@
 
         <div class="navbar-menu" id="navMenu">
             <div class="navbar-start">
-                <a href="https://www.facebook.com/cartaoajuda.pt/" target="_blank" class="navbar-item">
-                    <i class="fab fa-facebook-square"></i>
-                </a>
-                <a href="https://m.me/cartaoajuda.pt" target="_blank" class="navbar-item">
-                    <i class="fab fa-facebook-messenger"></i>
-                </a>
+
             </div>
             <div class="navbar-end">
                 <a class="navbar-item" href="#funcionamento">Funcionamento</a>
-                <a class="navbar-item" href="https://cartaoajuda.pt/store/cart%C3%A3o-ajuda" target="_blank">Página de exemplo</a>
+                <a class="navbar-item" href="#estabelecimentos">Estabelecimentos aderentes</a>
+                <a class="navbar-item" href="{{ route('exemplo') }}" target="_blank">Página de exemplo</a>
                 <div class="navbar-item">
                     <div class="field is-grouped">
                         <p class="control">
