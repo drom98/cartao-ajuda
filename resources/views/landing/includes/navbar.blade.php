@@ -2,7 +2,7 @@
     <div class="container">
         <div class="navbar-brand">
             <a class="navbar-item" href="#">
-              <h1 class="has-text-weight-bold is-link">Cartão Ajuda</h1>
+                <h1 class="has-text-weight-bold is-link">Cartão Ajuda</h1>
             </a>
             <a href="https://www.facebook.com/cartaoajuda.pt/" target="_blank" class="navbar-item">
                 <i class="fab fa-facebook-f"></i>

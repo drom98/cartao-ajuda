@@ -14,9 +14,9 @@
             <div class="container">
                 <div class="columns">
                     <div class="column has-text-centered">
-                        <p class="is-size-1 is-size-2-mobile has-shadow">
-                            <i class="fas fa-money-check-alt"></i>
-                        </p>
+                        <figure class="image is-64x64" style="margin: 0 auto">
+                            <img src="{{ asset('img/logo_icon.png') }}">
+                        </figure>
                         <h1 class="title is-size-1 is-size-3-mobile has-shadow">Não deixe parar o seu negócio.</h1>
                         <p class="subtitle is-size-6-mobile">Tem um negócio de portas fechadas? <br>Continue a receber pelos seus produtos ou serviços.
                     </div>
