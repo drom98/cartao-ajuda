@@ -22,7 +22,7 @@
 ![landing](https://i.imgur.com/HPoE9sP.png)
 ![Admin area](https://i.imgur.com/h3tcJN2.png)
 ![Add "retalho"](https://i.imgur.com/K7OU2Dm.png)
-![View list](https://i.imgur.com/jeq1t6X.gifv)
+![View list](https://i.imgur.com/jeq1t6X.gif)
 ![View list](https://i.imgur.com/MO2zWt4.png)
 
 
